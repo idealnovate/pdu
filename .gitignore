@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Node (if used)
+node_modules/
+npm-debug.log
+
+# Hostinger deploy artifacts
+*.zip
+*.tar.gz

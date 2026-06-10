@@ -1,0 +1,2231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PDU Africa – Become a Recognized UI/UX Designer. Learn practical UI/UX design for FREE with zero tech experience. Earn a global certificate, get mentored, and join 3,120+ designers across Africa." />
+  <meta name="keywords" content="UI UX design, free bootcamp, Africa, Figma, scholarship, PDU Africa, product design" />
+  <meta property="og:title" content="PDU Africa – UI/UX Design Scholarship Bootcamp" />
+  <meta property="og:description" content="Learn practical UI/UX design for FREE with zero tech experience." />
+  <meta name="theme-color" content="#068276" />
+  <title>PDU Africa | UI/UX Design Scholarship Bootcamp</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ===================== CSS VARIABLES ===================== */
+    :root {
+      --primary:       #068276;
+      --primary-dark:  #022c28;
+      --primary-mid:   #045c53;
+      --primary-light: #0a9e90;
+      --accent:        #f4a85e;
+      --accent-dark:   #e08930;
+      --bg-base:       #f0fdf9;
+      --bg-light:      #ffffff;
+      --bg-alt:        #f6fffe;
+      --bg-dark:       #022c28;
+      --text-dark:     #0a0a0a;
+      --text-mid:      #3a3a3a;
+      --text-muted:    #6b7280;
+      --border:        #d1faf4;
+      --shadow-sm:     0 2px 12px rgba(6,130,118,0.08);
+      --shadow-md:     0 8px 32px rgba(6,130,118,0.13);
+      --shadow-lg:     0 20px 60px rgba(6,130,118,0.15);
+      --radius-sm:     8px;
+      --radius-md:     16px;
+      --radius-lg:     24px;
+      --radius-xl:     40px;
+      --transition:    0.3s cubic-bezier(0.4,0,0.2,1);
+      --font-heading:  'Montserrat', sans-serif;
+      --font-body:     'Jost', sans-serif;
+      --max-width:     1200px;
+    }
+
+    /* ===================== RESET & BASE ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--bg-base);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: var(--primary); transition: color var(--transition); }
+    a:hover { color: var(--primary-light); }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; font-family: var(--font-body); }
+
+    /* ===================== TYPOGRAPHY ===================== */
+    h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); line-height: 1.15; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; }
+    h3 { font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 600; }
+    p  { font-size: 1.05rem; color: var(--text-mid); }
+
+    /* ===================== UTILITIES ===================== */
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 96px 0; }
+    .section-sm { padding: 64px 0; }
+    .text-center { text-align: center; }
+    .tag {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: rgba(6,130,118,0.1);
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .tag-accent {
+      color: var(--accent-dark);
+      background: rgba(244,168,94,0.12);
+    }
+    .eyebrow { color: var(--primary); font-weight: 600; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* ===================== BUTTONS ===================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: var(--radius-xl);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all var(--transition);
+      line-height: 1;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(6,130,118,0.35);
+    }
+    .btn-primary:hover {
+      background: var(--primary-mid);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(6,130,118,0.45);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(244,168,94,0.35);
+    }
+    .btn-accent:hover {
+      background: var(--accent-dark);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .btn-white {
+      background: #fff;
+      color: var(--primary);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .btn-white:hover {
+      background: var(--bg-base);
+      color: var(--primary-mid);
+      transform: translateY(-2px);
+    }
+    .btn-lg { padding: 18px 40px; font-size: 1.05rem; }
+
+    /* ===================== NAVBAR ===================== */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow var(--transition), background var(--transition);
+    }
+    #navbar.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      gap: 24px;
+    }
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 0.93rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition);
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+      background: rgba(6,130,118,0.07);
+    }
+    .nav-cta { display: flex; align-items: center; gap: 10px; }
+    .nav-cta .btn { padding: 10px 22px; font-size: 0.88rem; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--text-dark);
+      border-radius: 2px;
+      transition: all var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+    /* Mobile nav */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 76px; left: 0; right: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 20px 24px 28px;
+      box-shadow: var(--shadow-md);
+      z-index: 999;
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav a {
+      display: block;
+      padding: 12px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .mobile-nav a:hover { color: var(--primary); }
+    .mobile-nav .btn { margin-top: 16px; width: 100%; justify-content: center; }
+
+    /* ===================== HERO ===================== */
+    #hero {
+      padding: 140px 0 96px;
+      background: linear-gradient(135deg, #f0fdf9 0%, #e8faf7 50%, #f5fffd 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 560px; height: 560px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(6,130,118,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(244,168,94,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 64px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(6,130,118,0.1);
+      border: 1px solid rgba(6,130,118,0.2);
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 7px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero-badge span { font-size: 0.7rem; background: var(--primary); color: #fff; padding: 2px 8px; border-radius: 100px; }
+    .hero-title {
+      margin-bottom: 20px;
+      color: var(--primary-dark);
+      line-height: 1.1;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--primary);
+      position: relative;
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      max-width: 480px;
+      line-height: 1.65;
+    }
+    .hero-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .hero-feat {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      box-shadow: var(--shadow-sm);
+    }
+    .hero-feat-icon {
+      width: 36px; height: 36px;
+      border-radius: var(--radius-sm);
+      background: rgba(6,130,118,0.1);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+    .hero-feat-text strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 2px;
+    }
+    .hero-feat-text span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 32px; }
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .hero-avatars {
+      display: flex;
+    }
+    .hero-avatars span {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      background: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #fff;
+      margin-left: -8px;
+    }
+    .hero-avatars span:first-child { margin-left: 0; }
+
+    /* Hero Right */
+    .hero-image-wrap {
+      position: relative;
+    }
+    .hero-img-main {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-float-card {
+      position: absolute;
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+    }
+    .hero-float-card.card-1 {
+      bottom: 60px; left: -40px;
+    }
+    .hero-float-card.card-2 {
+      top: 40px; right: -30px;
+    }
+    .float-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 4px;
+    }
+    .float-value {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+    .float-sub { font-size: 0.78rem; color: var(--text-muted); }
+
+    /* ===================== SECTION HEADER ===================== */
+    .section-header { margin-bottom: 56px; }
+    .section-header h2 { margin: 12px 0 16px; color: var(--primary-dark); }
+    .section-header p { font-size: 1.08rem; color: var(--text-muted); max-width: 560px; }
+    .section-header.center { text-align: center; }
+    .section-header.center p { margin: 0 auto; }
+
+    /* Divider */
+    .divider {
+      width: 56px; height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 4px;
+      margin: 16px 0;
+    }
+    .divider.center { margin: 16px auto; }
+
+    /* ===================== BENEFITS ===================== */
+    #benefits { background: #fff; }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+    .benefit-card {
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .benefit-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+    .benefit-card:hover::before { transform: scaleX(1); }
+    .benefit-icon {
+      width: 56px; height: 56px;
+      border-radius: var(--radius-md);
+      background: rgba(6,130,118,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: var(--primary);
+      transition: background var(--transition);
+    }
+    .benefit-card:hover .benefit-icon { background: var(--primary); color: #fff; }
+    .benefit-card h3 { font-size: 1.15rem; margin-bottom: 12px; color: var(--primary-dark); }
+    .benefit-card p { font-size: 0.95rem; line-height: 1.75; }
+
+    /* ===================== TOOLS ===================== */
+    #tools { background: var(--bg-dark); position: relative; overflow: hidden; }
+    #tools::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(6,130,118,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #tools .section-header h2 { color: #fff; }
+    #tools .section-header p { color: rgba(255,255,255,0.65); }
+    #tools .tag { background: rgba(255,255,255,0.1); color: #fff; }
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+    .tool-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 32px 20px;
+      text-align: center;
+      transition: all var(--transition);
+      cursor: default;
+    }
+    .tool-card:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(6,130,118,0.5);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(6,130,118,0.2);
+    }
+    .tool-icon {
+      width: 72px; height: 72px;
+      border-radius: var(--radius-md);
+      margin: 0 auto 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.2rem;
+      background: rgba(255,255,255,0.08);
+    }
+    .tool-card h3 { color: #fff; font-size: 1.05rem; margin-bottom: 6px; }
+    .tool-card p { font-size: 0.82rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+    /* ===================== ALUMNI COMPANIES ===================== */
+    #alumni-work { background: #fff; }
+    .companies-intro { margin-bottom: 48px; }
+    .companies-track-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+    .companies-track-wrap::before,
+    .companies-track-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .companies-track-wrap::before { left: 0; background: linear-gradient(90deg, #fff, transparent); }
+    .companies-track-wrap::after  { right: 0; background: linear-gradient(270deg, #fff, transparent); }
+    .companies-track {
+      display: flex;
+      gap: 28px;
+      animation: scrollLeft 28s linear infinite;
+      width: max-content;
+    }
+    .companies-track:hover { animation-play-state: paused; }
+    @keyframes scrollLeft {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .company-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 12px 24px;
+      white-space: nowrap;
+      transition: all var(--transition);
+      cursor: default;
+    }
+    .company-chip:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-sm);
+    }
+    .company-chip:hover .company-icon,
+    .company-chip:hover .company-name { color: #fff; }
+    .company-icon { font-size: 1.3rem; }
+    .company-name { font-family: var(--font-heading); font-size: 0.92rem; font-weight: 700; color: var(--text-dark); }
+    .companies-stat-row {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 56px;
+      flex-wrap: wrap;
+    }
+    .companies-stat { text-align: center; }
+    .companies-stat .num {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+    }
+    .companies-stat .lbl { font-size: 0.88rem; color: var(--text-muted); }
+
+    /* ===================== QUALIFICATION ===================== */
+    #qualification { background: var(--bg-base); }
+    .qual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .qual-header h2 { color: var(--primary-dark); margin-bottom: 12px; }
+    .qual-sub { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 36px; }
+    .qual-list { margin-bottom: 36px; }
+    .qual-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .qual-item:last-child { border-bottom: none; }
+    .qual-check {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .qual-item p { font-size: 0.97rem; color: var(--text-mid); line-height: 1.65; margin: 0; }
+    .qual-image-wrap { position: relative; }
+    .qual-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+    .qual-badge {
+      position: absolute;
+      bottom: -20px; left: -20px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      box-shadow: var(--shadow-md);
+    }
+    .qual-badge .big { font-family: var(--font-heading); font-size: 2rem; font-weight: 800; display: block; }
+    .qual-badge .sm  { font-size: 0.78rem; opacity: 0.85; }
+
+    /* ===================== CURRICULUM ===================== */
+    #curriculum { background: #fff; }
+    .curriculum-layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .curriculum-sidebar {
+      position: sticky;
+      top: 96px;
+    }
+    .curriculum-sidebar h3 { font-size: 1.25rem; margin-bottom: 8px; color: var(--primary-dark); }
+    .curriculum-sidebar p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px; }
+    .curriculum-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .cs-item {
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      text-align: center;
+    }
+    .cs-num { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: var(--primary); display: block; }
+    .cs-lbl { font-size: 0.75rem; color: var(--text-muted); }
+    .accordion { display: flex; flex-direction: column; gap: 12px; }
+    .acc-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color var(--transition);
+    }
+    .acc-item.open { border-color: var(--primary); }
+    .acc-trigger {
+      width: 100%;
+      background: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      text-align: left;
+      gap: 16px;
+      background: var(--bg-base);
+      transition: background var(--transition);
+    }
+    .acc-item.open .acc-trigger { background: rgba(6,130,118,0.06); }
+    .acc-trigger:hover { background: rgba(6,130,118,0.04); }
+    .acc-title {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      flex: 1;
+    }
+    .acc-week {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--primary);
+      background: rgba(6,130,118,0.1);
+      padding: 3px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .acc-icon {
+      color: var(--primary);
+      font-size: 1rem;
+      transition: transform var(--transition);
+      flex-shrink: 0;
+    }
+    .acc-item.open .acc-icon { transform: rotate(180deg); }
+    .acc-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .acc-item.open .acc-body { max-height: 500px; }
+    .acc-content {
+      padding: 0 24px 24px;
+      border-top: 1px solid var(--border);
+    }
+    .acc-content ul { margin-top: 12px; }
+    .acc-content li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 0.91rem;
+      color: var(--text-mid);
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .acc-content li:last-child { border-bottom: none; }
+    .acc-content li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* ===================== WHO IS THIS FOR ===================== */
+    #who-for { background: var(--bg-base); }
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .who-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      transition: all var(--transition);
+    }
+    .who-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary);
+    }
+    .who-card .who-num {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 900;
+      color: rgba(6,130,118,0.1);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .who-card h3 { font-size: 1.05rem; color: var(--primary-dark); margin-bottom: 10px; }
+    .who-card p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.65; }
+
+    /* ===================== CERTIFICATION ===================== */
+    #certification {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-mid) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    #certification::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 450px; height: 450px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+    }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .cert-content .tag { background: rgba(255,255,255,0.12); color: #fff; }
+    .cert-content h2 { color: #fff; margin-bottom: 16px; }
+    .cert-content p { color: rgba(255,255,255,0.75); margin-bottom: 28px; }
+    .cert-steps { margin-bottom: 36px; }
+    .cert-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .cert-step-num {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .cert-step-text h4 { color: #fff; font-size: 1rem; margin-bottom: 4px; }
+    .cert-step-text p { color: rgba(255,255,255,0.65); font-size: 0.88rem; margin: 0; }
+    .cert-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cert-card-mock {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      width: 320px;
+      max-width: 100%;
+    }
+    .cert-card-mock .cert-seal {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      margin: 0 auto 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+    }
+    .cert-card-mock h4 { font-size: 1.05rem; color: var(--primary-dark); margin-bottom: 6px; }
+    .cert-card-mock p { font-size: 0.82rem; color: var(--text-muted); }
+    .cert-card-mock .cert-name { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--primary); margin: 16px 0; font-style: italic; }
+    .cert-card-mock .cert-program { font-size: 0.85rem; font-weight: 600; color: var(--text-mid); }
+
+    /* ===================== COMMUNITY ===================== */
+    #community { background: #fff; }
+    .community-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .community-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 28px 0;
+    }
+    .comm-stat {
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 20px 20px;
+    }
+    .comm-stat .n { font-family: var(--font-heading); font-size: 2rem; font-weight: 800; color: var(--primary); }
+    .comm-stat .l { font-size: 0.82rem; color: var(--text-muted); }
+    .community-perks { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+    .comm-perk {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .comm-perk-icon {
+      width: 40px; height: 40px;
+      border-radius: var(--radius-sm);
+      background: rgba(6,130,118,0.1);
+      color: var(--primary);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .comm-perk-text h4 { font-size: 0.97rem; color: var(--text-dark); margin-bottom: 3px; }
+    .comm-perk-text p { font-size: 0.88rem; color: var(--text-muted); margin: 0; }
+    .community-image {
+      position: relative;
+    }
+    .comm-img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      object-fit: cover;
+      aspect-ratio: 1;
+    }
+
+    /* ===================== KICKSTART ===================== */
+    #kickstart {
+      background: var(--bg-base);
+    }
+    .kickstart-box {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+      border-radius: var(--radius-xl);
+      padding: 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .kickstart-box::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+    .kickstart-box::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -60px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .kickstart-box .tag { background: rgba(255,255,255,0.15); color: #fff; }
+    .kickstart-box h2 { color: #fff; margin-bottom: 16px; }
+    .kickstart-box p { color: rgba(255,255,255,0.8); margin-bottom: 36px; font-size: 1.1rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .kickstart-steps {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .ks-step {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .ks-step-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 0 20px;
+    }
+    .ks-num {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      border: 2px solid rgba(255,255,255,0.4);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ks-lbl { color: rgba(255,255,255,0.85); font-size: 0.85rem; font-weight: 500; text-align: center; }
+    .ks-arrow { color: rgba(255,255,255,0.4); font-size: 1.5rem; }
+    .kickstart-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* ===================== FAQ ===================== */
+    #faq { background: #fff; }
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .faq-sidebar { position: sticky; top: 96px; }
+    .faq-sidebar h2 { color: var(--primary-dark); margin-bottom: 16px; }
+    .faq-sidebar p { color: var(--text-muted); margin-bottom: 24px; }
+    .faq-contact {
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+    .faq-contact p { font-size: 0.9rem; margin-bottom: 12px; }
+    .faq-contact a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+    .faq-list { display: flex; flex-direction: column; gap: 8px; }
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color var(--transition);
+    }
+    .faq-item.open { border-color: var(--primary); }
+    .faq-trigger {
+      width: 100%;
+      background: var(--bg-base);
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+      transition: background var(--transition);
+    }
+    .faq-item.open .faq-trigger { background: rgba(6,130,118,0.05); }
+    .faq-trigger:hover { background: rgba(6,130,118,0.04); }
+    .faq-trigger span {
+      font-family: var(--font-heading);
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      flex: 1;
+    }
+    .faq-trigger i {
+      color: var(--primary);
+      font-size: 1rem;
+      transition: transform var(--transition);
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-trigger i { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-answer-inner {
+      padding: 0 24px 20px;
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+
+    /* ===================== FOOTER ===================== */
+    #footer {
+      background: var(--primary-dark);
+      color: rgba(255,255,255,0.8);
+      padding: 72px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+    .footer-brand img { height: 40px; margin-bottom: 20px; }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.75; color: rgba(255,255,255,0.6); margin-bottom: 20px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.7);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      transition: all var(--transition);
+    }
+    .footer-social a:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+      transition: color var(--transition);
+    }
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .footer-contact-item i { color: var(--primary-light); margin-top: 3px; font-size: 0.85rem; }
+    .footer-contact-item span { font-size: 0.86rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+    .footer-subscribe { margin-top: 24px; }
+    .footer-subscribe p { font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-bottom: 12px; }
+    .subscribe-form { display: flex; gap: 8px; }
+    .subscribe-form input {
+      flex: 1;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color var(--transition);
+    }
+    .subscribe-form input::placeholder { color: rgba(255,255,255,0.4); }
+    .subscribe-form input:focus { border-color: var(--primary-light); }
+    .subscribe-form button {
+      background: var(--primary);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: background var(--transition);
+    }
+    .subscribe-form button:hover { background: var(--primary-light); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.45); }
+    .footer-bottom a { color: rgba(255,255,255,0.6); font-size: 0.82rem; }
+    .footer-bottom a:hover { color: #fff; }
+    .footer-links { display: flex; gap: 20px; }
+
+    /* ===================== BACK TO TOP ===================== */
+    #back-top {
+      position: fixed;
+      bottom: 32px; right: 32px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      pointer-events: none;
+      transition: all var(--transition);
+      z-index: 900;
+    }
+    #back-top.visible { opacity: 1; pointer-events: auto; }
+    #back-top:hover { background: var(--primary-mid); transform: translateY(-3px); }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 1024px) {
+      .tools-grid { grid-template-columns: repeat(3, 1fr); }
+      .curriculum-layout { grid-template-columns: 1fr; }
+      .curriculum-sidebar { position: static; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .faq-layout { grid-template-columns: 1fr; }
+      .faq-sidebar { position: static; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-image-wrap { order: -1; max-width: 400px; margin: 0 auto; }
+      .hero-float-card.card-1 { left: -12px; bottom: 40px; }
+      .hero-float-card.card-2 { right: -12px; top: 20px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+      .who-grid { grid-template-columns: 1fr 1fr; }
+      .qual-grid { grid-template-columns: 1fr; gap: 40px; }
+      .qual-image-wrap { order: -1; }
+      .cert-grid { grid-template-columns: 1fr; }
+      .community-grid { grid-template-columns: 1fr; gap: 40px; }
+      .kickstart-box { padding: 48px 28px; }
+      .kickstart-steps { gap: 0; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .companies-stat-row { gap: 28px; }
+      .hero-features { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .who-grid { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: 1fr 1fr; }
+      .kickstart-steps { flex-direction: column; align-items: center; }
+      .ks-arrow { transform: rotate(90deg); }
+      .hero-buttons { flex-direction: column; }
+      .btn-lg { width: 100%; justify-content: center; }
+      .cert-card-mock { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="PDU Africa Home">
+        <img src="Pictures/PDU Logo Dark (1).png" alt="PDU Africa" />
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#curriculum">Curriculum</a></li>
+        <li><a href="#student-work">Students Work</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="#kickstart" class="btn btn-primary">Enroll Now</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <a href="#benefits" class="mobile-link">Benefits</a>
+  <a href="#curriculum" class="mobile-link">Curriculum</a>
+  <a href="#student-work" class="mobile-link">Students Work</a>
+  <a href="#faq" class="mobile-link">FAQ</a>
+  <a href="#kickstart" class="btn btn-primary">Enroll Now</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <!-- Left -->
+      <div data-aos="fade-right" data-aos-duration="800">
+        <div class="hero-badge">
+          <i class="fa-solid fa-star" style="color:var(--accent)"></i>
+          <span>FREE</span> Scholarship Bootcamp — Limited Spots
+        </div>
+        <h1 class="hero-title">
+          Become a <em>Recognized</em><br>UI/UX Designer
+        </h1>
+        <p class="hero-sub">
+          Learn practical UI/UX design for <strong>FREE</strong> with zero tech experience.
+          Get mentored by industry experts, build a global portfolio, and land your dream remote role.
+        </p>
+
+        <div class="hero-features">
+          <div class="hero-feat">
+            <div class="hero-feat-icon"><i class="fa-solid fa-certificate"></i></div>
+            <div class="hero-feat-text">
+              <strong>Certification</strong>
+              <span>Earn Global Certificate</span>
+            </div>
+          </div>
+          <div class="hero-feat">
+            <div class="hero-feat-icon"><i class="fa-solid fa-video"></i></div>
+            <div class="hero-feat-text">
+              <strong>Learning Mode</strong>
+              <span>Live Online Sessions</span>
+            </div>
+          </div>
+          <div class="hero-feat">
+            <div class="hero-feat-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="hero-feat-text">
+              <strong>Job Opportunities</strong>
+              <span>Global &amp; Local Tech Roles</span>
+            </div>
+          </div>
+          <div class="hero-feat">
+            <div class="hero-feat-icon"><i class="fa-solid fa-star"></i></div>
+            <div class="hero-feat-text">
+              <strong>Alumni Rating</strong>
+              <span>⭐ 4.8/5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#kickstart" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-rocket"></i> Enroll Now — It's FREE
+          </a>
+          <a href="https://wa.me/2347000000000" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
+            <i class="fa-brands fa-whatsapp"></i> Talk to Admissions
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="hero-avatars">
+            <span>AK</span><span>OB</span><span>FN</span><span>MI</span>
+          </div>
+          <span>Join <strong>3,120+ designers</strong> already transforming their careers</span>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="hero-image-wrap" data-aos="fade-left" data-aos-duration="900" data-aos-delay="100">
+        <img
+          src="Pictures/Idealhero.jpg"
+          alt="Lady working on UI/UX design with laptop"
+          class="hero-img-main"
+          loading="eager"
+        />
+        <div class="hero-float-card card-1">
+          <div class="float-label">Next Cohort Starts</div>
+          <div class="float-value">July 2025</div>
+          <div class="float-sub">Limited seats available</div>
+        </div>
+        <div class="hero-float-card card-2">
+          <div class="float-label">Avg. Salary Increase</div>
+          <div class="float-value">3× <span style="color:var(--primary);font-size:0.9rem">↑</span></div>
+          <div class="float-sub">Within 6 months</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BENEFITS ===================== -->
+<section id="benefits" class="section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header center" data-aos="fade-up">
+      <div class="tag">Why PDU Africa</div>
+      <h2>Skills That Pay. Community That Stays.<br>Results That Last.</h2>
+      <div class="divider center"></div>
+      <p>We don't just teach design — we transform careers. Discover the unfair advantages you get when you join the PDU Africa scholarship bootcamp.</p>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="benefit-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <h3>Industry-Relevant Skills</h3>
+        <p>Master Figma from beginner to advanced, plus AI-powered design tools that top companies use daily. Every skill you learn is directly mapped to what employers are hiring for right now.</p>
+      </div>
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="benefit-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+        <h3>Increased Earnings</h3>
+        <p>UI/UX designers in Africa earn ₦300k–₦600k+ monthly. Our graduates report an average <strong>3× salary increase</strong> within 6 months of completing the diploma — with global remote opportunities on top.</p>
+      </div>
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="benefit-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <h3>More Scholarship Access</h3>
+        <p>Get access to our diploma scholarship to build and grow your career through partnership, collaborations and personalized mentorship tailored to your pace and goals.</p>
+      </div>
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="240">
+        <div class="benefit-icon"><i class="fa-solid fa-users"></i></div>
+        <h3>Community Support</h3>
+        <p>Join a thriving network of <strong>3,120+ designers</strong> across Africa. Get peer feedback, collaborate on projects, attend live events, and stay connected to a community that grows with you long after graduation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TOOLS YOU WILL MASTER ===================== -->
+<section id="tools" class="section">
+  <div class="container">
+    <div class="section-header center" data-aos="fade-up">
+      <div class="tag">Tools You'll Master</div>
+      <h2 style="color:#fff;">Industry-Standard Tools.<br>Used by Top Designers Worldwide.</h2>
+      <div class="divider center"></div>
+      <p style="color:rgba(255,255,255,0.65);">From wireframing to AI-powered prototyping, you'll graduate confident in the tools that matter most in the global design market.</p>
+    </div>
+
+    <div class="tools-grid">
+      <div class="tool-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="tool-icon">🎨</div>
+        <h3>Figma</h3>
+        <p>The world's #1 design tool for UI/UX — from wireframes to polished prototypes.</p>
+      </div>
+      <div class="tool-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="tool-icon">🗺️</div>
+        <h3>FigJam</h3>
+        <p>Collaborative whiteboarding for design thinking, user flows and team ideation.</p>
+      </div>
+      <div class="tool-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="tool-icon">✨</div>
+        <h3>Figma AI</h3>
+        <p>Automate repetitive tasks and generate design assets with built-in AI magic.</p>
+      </div>
+      <div class="tool-card" data-aos="fade-up" data-aos-delay="240">
+        <div class="tool-icon">🤖</div>
+        <h3>Claude AI</h3>
+        <p>Leverage AI for UX writing, user research synthesis and design documentation.</p>
+      </div>
+      <div class="tool-card" data-aos="fade-up" data-aos-delay="320">
+        <div class="tool-icon">💡</div>
+        <h3>Lovable AI</h3>
+        <p>Turn Figma designs into working web apps in minutes — no coding required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHERE ALUMNI WORK ===================== -->
+<section id="student-work" class="section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header center companies-intro" data-aos="fade-up">
+      <div class="tag">Alumni Success</div>
+      <h2>Where Our Graduates Work</h2>
+      <div class="divider center"></div>
+      <p>Our alumni are now shaping product experiences at Africa's fastest-growing tech companies and global giants. Your name could be next.</p>
+    </div>
+
+    <div class="companies-track-wrap" data-aos="fade-up" data-aos-delay="100">
+      <div class="companies-track">
+        <!-- First set -->
+        <div class="company-chip"><span class="company-icon">🔵</span><span class="company-name">Google</span></div>
+        <div class="company-chip"><span class="company-icon">🟢</span><span class="company-name">Paystack</span></div>
+        <div class="company-chip"><span class="company-icon">🔷</span><span class="company-name">Microsoft</span></div>
+        <div class="company-chip"><span class="company-icon">🌿</span><span class="company-name">Vital Relief Wellness</span></div>
+        <div class="company-chip"><span class="company-icon">⚡</span><span class="company-name">Bolt</span></div>
+        <div class="company-chip"><span class="company-icon">🟠</span><span class="company-name">Glovo</span></div>
+        <div class="company-chip"><span class="company-icon">🏦</span><span class="company-name">Access Bank</span></div>
+        <div class="company-chip"><span class="company-icon">📱</span><span class="company-name">Flutterwave</span></div>
+        <div class="company-chip"><span class="company-icon">🛒</span><span class="company-name">Jumia</span></div>
+        <div class="company-chip"><span class="company-icon">🚀</span><span class="company-name">Andela</span></div>
+        <div class="company-chip"><span class="company-icon">💳</span><span class="company-name">Moniepoint</span></div>
+        <div class="company-chip"><span class="company-icon">📊</span><span class="company-name">PiggyVest</span></div>
+        <!-- Duplicate for seamless loop -->
+        <div class="company-chip"><span class="company-icon">🔵</span><span class="company-name">Google</span></div>
+        <div class="company-chip"><span class="company-icon">🟢</span><span class="company-name">Paystack</span></div>
+        <div class="company-chip"><span class="company-icon">🔷</span><span class="company-name">Microsoft</span></div>
+        <div class="company-chip"><span class="company-icon">🌿</span><span class="company-name">Vital Relief Wellness</span></div>
+        <div class="company-chip"><span class="company-icon">⚡</span><span class="company-name">Bolt</span></div>
+        <div class="company-chip"><span class="company-icon">🟠</span><span class="company-name">Glovo</span></div>
+        <div class="company-chip"><span class="company-icon">🏦</span><span class="company-name">Access Bank</span></div>
+        <div class="company-chip"><span class="company-icon">📱</span><span class="company-name">Flutterwave</span></div>
+        <div class="company-chip"><span class="company-icon">🛒</span><span class="company-name">Jumia</span></div>
+        <div class="company-chip"><span class="company-icon">🚀</span><span class="company-name">Andela</span></div>
+        <div class="company-chip"><span class="company-icon">💳</span><span class="company-name">Moniepoint</span></div>
+        <div class="company-chip"><span class="company-icon">📊</span><span class="company-name">PiggyVest</span></div>
+      </div>
+    </div>
+
+    <div class="companies-stat-row" data-aos="fade-up" data-aos-delay="200">
+      <div class="companies-stat">
+        <span class="num">3,120+</span>
+        <span class="lbl">Designers Trained</span>
+      </div>
+      <div class="companies-stat">
+        <span class="num">40+</span>
+        <span class="lbl">Countries Reached</span>
+      </div>
+      <div class="companies-stat">
+        <span class="num">85%</span>
+        <span class="lbl">Job Placement Rate</span>
+      </div>
+      <div class="companies-stat">
+        <span class="num">3×</span>
+        <span class="lbl">Average Salary Increase</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== QUALIFICATION REQUIREMENTS ===================== -->
+<section id="qualification" class="section">
+  <div class="container">
+    <div class="qual-grid">
+      <!-- Left -->
+      <div data-aos="fade-right">
+        <div class="tag">Requirements</div>
+        <h2 class="qual-header">We've Got Your Back</h2>
+        <p class="qual-sub">From application to graduation, our team supports you every step of the way. Here's what we ask in return for this premium, free training:</p>
+
+        <div class="qual-list">
+          <div class="qual-item">
+            <div class="qual-check"><i class="fa-solid fa-check"></i></div>
+            <p>Follow our social media platforms to stay connected with the latest updates, resources, and community announcements.</p>
+          </div>
+          <div class="qual-item">
+            <div class="qual-check"><i class="fa-solid fa-check"></i></div>
+            <p>You must be ready to carry out all projects and assignments — consistent effort is non-negotiable or you will be exited from the training.</p>
+          </div>
+          <div class="qual-item">
+            <div class="qual-check"><i class="fa-solid fa-check"></i></div>
+            <p>You must be willing to share your testimonial if you are getting value — your story inspires the next generation of African designers.</p>
+          </div>
+          <div class="qual-item">
+            <div class="qual-check"><i class="fa-solid fa-check"></i></div>
+            <p>You must have a working smartphone to access live sessions, resources, and the community platform.</p>
+          </div>
+          <div class="qual-item">
+            <div class="qual-check"><i class="fa-solid fa-check"></i></div>
+            <p>You should have a working computer system — Windows or Mac — for design projects and Figma practice.</p>
+          </div>
+          <div class="qual-item">
+            <div class="qual-check"><i class="fa-solid fa-check"></i></div>
+            <p>You must meet the weekly grade score to advance through each module and earn your final certification.</p>
+          </div>
+        </div>
+
+        <a href="#kickstart" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-rocket"></i> Enroll Now — It's FREE
+        </a>
+      </div>
+
+      <!-- Right -->
+      <div class="qual-image-wrap" data-aos="fade-left" data-aos-delay="100">
+        <img
+          src="Pictures/IdealTeam.png"
+          alt="PDU Africa mentors supporting students"
+          class="qual-img"
+        />
+        <div class="qual-badge">
+          <span class="big">100%</span>
+          <span class="sm">Mentor Support Guaranteed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CURRICULUM ===================== -->
+<section id="curriculum" class="section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header center" data-aos="fade-up" style="margin-bottom:56px;">
+      <div class="tag">Scheme of Work</div>
+      <h2>Elementary UI/UX Design<br>Bootcamp Curriculum</h2>
+      <div class="divider center"></div>
+      <p>A structured, hands-on curriculum designed to take you from complete beginner to job-ready designer in 12 intensive weeks.</p>
+    </div>
+
+    <div class="curriculum-layout">
+      <!-- Sidebar -->
+      <div class="curriculum-sidebar" data-aos="fade-right">
+        <h3>Programme Overview</h3>
+        <p>12-week live online bootcamp designed for absolute beginners with zero tech background.</p>
+        <div class="curriculum-stats">
+          <div class="cs-item"><span class="cs-num">12</span><span class="cs-lbl">Weeks</span></div>
+          <div class="cs-item"><span class="cs-num">48+</span><span class="cs-lbl">Live Sessions</span></div>
+          <div class="cs-item"><span class="cs-num">10+</span><span class="cs-lbl">Projects</span></div>
+          <div class="cs-item"><span class="cs-num">5</span><span class="cs-lbl">Tools Mastered</span></div>
+        </div>
+        <div style="background:rgba(6,130,118,0.06);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px;">
+          <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:12px;">
+            <strong style="color:var(--primary-dark);">What's included:</strong>
+          </p>
+          <ul style="list-style:none;padding:0;">
+            <li style="display:flex;align-items:center;gap:8px;font-size:0.86rem;color:var(--text-muted);padding:6px 0;border-bottom:1px solid var(--border);">
+              <i class="fa-solid fa-check" style="color:var(--primary);"></i> Live instructor-led sessions
+            </li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:0.86rem;color:var(--text-muted);padding:6px 0;border-bottom:1px solid var(--border);">
+              <i class="fa-solid fa-check" style="color:var(--primary);"></i> Weekly assignments &amp; feedback
+            </li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:0.86rem;color:var(--text-muted);padding:6px 0;border-bottom:1px solid var(--border);">
+              <i class="fa-solid fa-check" style="color:var(--primary);"></i> Portfolio project support
+            </li>
+            <li style="display:flex;align-items:center;gap:8px;font-size:0.86rem;color:var(--text-muted);padding:6px 0;">
+              <i class="fa-solid fa-check" style="color:var(--primary);"></i> Global certificate upon completion
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <div class="accordion" id="curriculumAccordion" data-aos="fade-left" data-aos-delay="100">
+
+        <div class="acc-item open">
+          <button class="acc-trigger" aria-expanded="true">
+            <span class="acc-week">Week 1–2</span>
+            <span class="acc-title">Foundations of UI/UX Design &amp; Design Thinking</span>
+            <i class="fa-solid fa-chevron-down acc-icon"></i>
+          </button>
+          <div class="acc-body">
+            <div class="acc-content">
+              <ul>
+                <li>What is UI vs UX — understanding the difference and why both matter</li>
+                <li>Introduction to Design Thinking: Empathize, Define, Ideate, Prototype, Test</li>
+                <li>Overview of the design industry: roles, career paths and earning potential</li>
+                <li>Setting up your Figma workspace and navigating the interface</li>
+                <li>Assignment: Create your first mood board and design brief</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" aria-expanded="false">
+            <span class="acc-week">Week 3–4</span>
+            <span class="acc-title">User Research, Personas &amp; Information Architecture</span>
+            <i class="fa-solid fa-chevron-down acc-icon"></i>
+          </button>
+          <div class="acc-body">
+            <div class="acc-content">
+              <ul>
+                <li>User research methods: interviews, surveys, observation, secondary research</li>
+                <li>Creating user personas and empathy maps from research data</li>
+                <li>Understanding user journeys and mapping pain points</li>
+                <li>Introduction to information architecture, sitemaps and user flows</li>
+                <li>Assignment: Conduct user interviews and build a persona document</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" aria-expanded="false">
+            <span class="acc-week">Week 5–6</span>
+            <span class="acc-title">Wireframing &amp; UI Design Fundamentals</span>
+            <i class="fa-solid fa-chevron-down acc-icon"></i>
+          </button>
+          <div class="acc-body">
+            <div class="acc-content">
+              <ul>
+                <li>Lo-fi and hi-fi wireframing techniques using Figma</li>
+                <li>Typography in UI: choosing fonts, scale, hierarchy and readability</li>
+                <li>Colour theory for digital design: palettes, accessibility, contrast ratios</li>
+                <li>Spacing, grids and layout systems (8-point grid)</li>
+                <li>Assignment: Design a 5-screen wireframe for your chosen app concept</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" aria-expanded="false">
+            <span class="acc-week">Week 7–8</span>
+            <span class="acc-title">Component Design, Design Systems &amp; Auto Layout</span>
+            <i class="fa-solid fa-chevron-down acc-icon"></i>
+          </button>
+          <div class="acc-body">
+            <div class="acc-content">
+              <ul>
+                <li>Building reusable components: buttons, cards, navigation bars, forms</li>
+                <li>Figma Auto Layout: creating responsive, scalable components</li>
+                <li>Introduction to design systems and design tokens</li>
+                <li>Building a mini design system for your portfolio project</li>
+                <li>Assignment: Build a complete component library in Figma</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" aria-expanded="false">
+            <span class="acc-week">Week 9</span>
+            <span class="acc-title">Prototyping, Micro-interactions &amp; Usability Testing</span>
+            <i class="fa-solid fa-chevron-down acc-icon"></i>
+          </button>
+          <div class="acc-body">
+            <div class="acc-content">
+              <ul>
+                <li>Creating interactive prototypes in Figma with transitions and animations</li>
+                <li>Micro-interactions: hover states, loading states, feedback cues</li>
+                <li>Planning and conducting a usability test session</li>
+                <li>Analysing test results and iterating on your design</li>
+                <li>Assignment: Prototype your app and run a usability test with 3 users</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" aria-expanded="false">
+            <span class="acc-week">Week 10</span>
+            <span class="acc-title">AI-Powered Design: Figma AI, Claude AI &amp; Lovable</span>
+            <i class="fa-solid fa-chevron-down acc-icon"></i>
+          </button>
+          <div class="acc-body">
+            <div class="acc-content">
+              <ul>
+                <li>Using Figma AI for auto-generation, content fill and design suggestions</li>
+                <li>FigJam AI for whiteboarding sessions and collaborative ideation</li>
+                <li>Leveraging Claude AI for UX writing, persona generation and documentation</li>
+                <li>Introduction to Lovable AI: turning Figma designs into live web prototypes</li>
+                <li>Assignment: Use AI tools to redesign and document an existing product screen</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <button class="acc-trigger" aria-expanded="false">
+            <span class="acc-week">Week 11–12</span>
+            <span class="acc-title">Portfolio Building, Job Readiness &amp; Graduation</span>
+            <i class="fa-solid fa-chevron-down acc-icon"></i>
+          </button>
+          <div class="acc-body">
+            <div class="acc-content">
+              <ul>
+                <li>Structuring your Behance and portfolio case study for maximum impact</li>
+                <li>Writing compelling design case studies that get recruiter attention</li>
+                <li>Optimizing your LinkedIn profile and applying for design roles</li>
+                <li>Capstone project: end-to-end design challenge with live critique</li>
+                <li>Graduation ceremony, certificate issuance &amp; community onboarding</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHO IS THIS FOR ===================== -->
+<section id="who-for" class="section">
+  <div class="container">
+    <div class="section-header center" data-aos="fade-up">
+      <div class="tag">Is This For You?</div>
+      <h2>This Bootcamp Was Built<br>Specifically For You</h2>
+      <div class="divider center"></div>
+      <p>If any of these describe you, you're exactly who we designed this scholarship for.</p>
+    </div>
+
+    <div class="who-grid">
+      <div class="who-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="who-num">01</div>
+        <h3>The 9-to-5 Escape Artist</h3>
+        <p>You work a regular job but dream of remote work from home. You want to break free from commutes and build a skill that lets you work from anywhere in the world.</p>
+      </div>
+      <div class="who-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="who-num">02</div>
+        <h3>The Intentional Income Builder</h3>
+        <p>You've decided that this year you will increase your earning ability, intentionally. You're done leaving money on the table and ready to command premium rates.</p>
+      </div>
+      <div class="who-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="who-num">03</div>
+        <h3>The Global Competitor</h3>
+        <p>You need a global skill that lets you compete — and win — against talent worldwide. UI/UX is the passport that opens international remote opportunities.</p>
+      </div>
+      <div class="who-card" data-aos="fade-up" data-aos-delay="240">
+        <div class="who-num">04</div>
+        <h3>The Bold Beginner</h3>
+        <p>You believe in yourself enough to kick-start something exceptional this year. You have zero design experience but massive potential and drive to succeed.</p>
+      </div>
+      <div class="who-card" data-aos="fade-up" data-aos-delay="320">
+        <div class="who-num">05</div>
+        <h3>The Practical Learner</h3>
+        <p>You need a learning system that is easy to understand and immediately applicable — not theory-heavy academic content but real-world, project-based training.</p>
+      </div>
+      <div class="who-card" data-aos="fade-up" data-aos-delay="400" style="background:var(--primary);border-color:var(--primary);">
+        <div class="who-num" style="color:rgba(255,255,255,0.15);">✓</div>
+        <h3 style="color:#fff;">That's you? You're in the right place.</h3>
+        <p style="color:rgba(255,255,255,0.8);">Join 3,120+ designers who took the leap. Your first class is free and you get lifetime community access.</p>
+        <a href="#kickstart" class="btn btn-white" style="margin-top:20px;">Apply Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CERTIFICATION ===================== -->
+<section id="certification" class="section">
+  <div class="container">
+    <div class="cert-grid">
+      <!-- Left content -->
+      <div data-aos="fade-right">
+        <div class="tag">Certification</div>
+        <h2>Earn a Globally Recognised<br>Professional Certificate</h2>
+        <div class="divider"></div>
+        <p>Upon completing the PDU Africa UI/UX Design Scholarship Bootcamp, you'll receive a premium digital and physical certificate that validates your skills to employers worldwide.</p>
+
+        <div class="cert-steps">
+          <div class="cert-step">
+            <div class="cert-step-num">1</div>
+            <div class="cert-step-text">
+              <h4>Complete All 12 Modules</h4>
+              <p>Attend live sessions, submit all projects and meet the weekly grade score</p>
+            </div>
+          </div>
+          <div class="cert-step">
+            <div class="cert-step-num">2</div>
+            <div class="cert-step-text">
+              <h4>Pass Your Capstone Project</h4>
+              <p>Present your end-to-end design project to a panel of industry mentors</p>
+            </div>
+          </div>
+          <div class="cert-step">
+            <div class="cert-step-num">3</div>
+            <div class="cert-step-text">
+              <h4>Receive Your Certificate</h4>
+              <p>Get your premium, verifiable PDU Africa UI/UX design certificate</p>
+            </div>
+          </div>
+          <div class="cert-step">
+            <div class="cert-step-num">4</div>
+            <div class="cert-step-text">
+              <h4>Unlock Career Support</h4>
+              <p>Access job placement support, portfolio reviews and alumni network</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#kickstart" class="btn btn-accent btn-lg">
+          <i class="fa-solid fa-certificate"></i> Start Earning Your Certificate
+        </a>
+      </div>
+
+      <!-- Right — certificate mockup -->
+      <div class="cert-visual" data-aos="fade-left" data-aos-delay="150">
+        <div class="cert-card-mock">
+          <div class="cert-seal">🎓</div>
+          <p style="font-size:0.78rem;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;">Certificate of Completion</p>
+          <p style="font-size:0.82rem;margin:8px 0 4px;color:var(--text-muted);">This certifies that</p>
+          <div class="cert-name">Your Name Here</div>
+          <div class="cert-program">Elementary UI/UX Design Bootcamp</div>
+          <div style="margin:20px 0;height:1px;background:var(--border);"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="text-align:left;">
+              <div style="font-size:0.7rem;color:var(--text-muted);">Issued by</div>
+              <div style="font-size:0.82rem;font-weight:700;color:var(--primary-dark);">PDU Africa</div>
+            </div>
+            <img src="Pictures/PDU Logo Dark (1).png" alt="PDU Africa" style="height:28px;width:auto;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMMUNITY ===================== -->
+<section id="community" class="section" style="background:#fff;">
+  <div class="container">
+    <div class="community-grid">
+      <!-- Left -->
+      <div data-aos="fade-right">
+        <div class="tag">Community</div>
+        <h2>More Than a Bootcamp.<br>A Movement of Designers.</h2>
+        <div class="divider"></div>
+        <p>When you join PDU Africa, you don't just get a curriculum — you join Africa's most active UI/UX design community, where accountability meets ambition.</p>
+
+        <div class="community-stats">
+          <div class="comm-stat"><div class="n">3,120+</div><div class="l">Active Designers</div></div>
+          <div class="comm-stat"><div class="n">40+</div><div class="l">Countries</div></div>
+          <div class="comm-stat"><div class="n">200+</div><div class="l">Projects Shipped</div></div>
+          <div class="comm-stat"><div class="n">98%</div><div class="l">Would Recommend</div></div>
+        </div>
+
+        <div class="community-perks">
+          <div class="comm-perk">
+            <div class="comm-perk-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div class="comm-perk-text">
+              <h4>Active WhatsApp &amp; Slack Community</h4>
+              <p>Daily conversations, job leads, feedback and peer support with fellow designers.</p>
+            </div>
+          </div>
+          <div class="comm-perk">
+            <div class="comm-perk-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <div class="comm-perk-text">
+              <h4>Weekly Live Events &amp; Design Challenges</h4>
+              <p>Participate in critiques, masterclasses, and industry talks from top designers.</p>
+            </div>
+          </div>
+          <div class="comm-perk">
+            <div class="comm-perk-icon"><i class="fa-solid fa-handshake"></i></div>
+            <div class="comm-perk-text">
+              <h4>Networking &amp; Collaboration Opportunities</h4>
+              <p>Collaborate with peers across Africa on real projects that build your portfolio.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://chat.whatsapp.com/pduafrica" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+          <i class="fa-brands fa-whatsapp"></i> Join Our Community
+        </a>
+      </div>
+
+      <!-- Right image -->
+      <div class="community-image" data-aos="fade-left" data-aos-delay="100">
+        <img
+          src="Pictures/Idealnovate Pics 12.jpg"
+          alt="PDU Africa community designers collaborating"
+          class="comm-img"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== KICKSTART JOURNEY ===================== -->
+<section id="kickstart" class="section" style="background:var(--bg-base);">
+  <div class="container">
+    <div class="kickstart-box" data-aos="zoom-in" data-aos-duration="600">
+      <div class="tag">Enroll Today</div>
+      <h2>Kickstart Your UI/UX Journey<br>Right Now — For Free</h2>
+      <p>Limited scholarship spots available per cohort. Secure your place today and begin your transformation into a globally recognised product designer.</p>
+
+      <div class="kickstart-steps">
+        <div class="ks-step">
+          <div class="ks-step-inner">
+            <div class="ks-num">1</div>
+            <div class="ks-lbl">Click Enroll Now</div>
+          </div>
+          <span class="ks-arrow">→</span>
+        </div>
+        <div class="ks-step">
+          <div class="ks-step-inner">
+            <div class="ks-num">2</div>
+            <div class="ks-lbl">Complete Application</div>
+          </div>
+          <span class="ks-arrow">→</span>
+        </div>
+        <div class="ks-step">
+          <div class="ks-step-inner">
+            <div class="ks-num">3</div>
+            <div class="ks-lbl">Get Accepted</div>
+          </div>
+          <span class="ks-arrow">→</span>
+        </div>
+        <div class="ks-step">
+          <div class="ks-step-inner">
+            <div class="ks-num">4</div>
+            <div class="ks-lbl">Start Learning</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kickstart-buttons">
+        <a href="https://forms.gle/pduafrica" target="_blank" rel="noopener" class="btn btn-white btn-lg">
+          <i class="fa-solid fa-pen-to-square"></i> Enroll Now — It's FREE
+        </a>
+        <a href="https://wa.me/2347000000000" target="_blank" rel="noopener" class="btn btn-lg" style="background:rgba(255,255,255,0.15);color:#fff;border:2px solid rgba(255,255,255,0.35);">
+          <i class="fa-brands fa-whatsapp"></i> Chat With Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section id="faq" class="section" style="background:#fff;">
+  <div class="container">
+    <div class="faq-layout">
+      <!-- Sidebar -->
+      <div class="faq-sidebar" data-aos="fade-right">
+        <div class="tag">FAQ</div>
+        <h2>Got Questions?<br>We've Got Answers.</h2>
+        <div class="divider"></div>
+        <p>Can't find what you're looking for? Reach out to our team directly and we'll get back to you within 24 hours.</p>
+        <div class="faq-contact">
+          <p>Contact our admissions team:</p>
+          <a href="mailto:hello@pduafrica.com"><i class="fa-solid fa-envelope"></i> hello@pduafrica.com</a>
+          <a href="https://wa.me/2347000000000" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+          <a href="https://instagram.com/pduafrica" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> @pduafrica</a>
+        </div>
+      </div>
+
+      <!-- Questions -->
+      <div class="faq-list" data-aos="fade-left" data-aos-delay="100">
+
+        <div class="faq-item open">
+          <button class="faq-trigger" aria-expanded="true">
+            <span>Is the bootcamp really free?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes! The PDU Africa UI/UX Design Scholarship Bootcamp is 100% free for accepted applicants. We believe talent shouldn't be limited by financial constraints. All you need is commitment, consistency and a device to learn on.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Do I need prior design or tech experience?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Absolutely not. This bootcamp is specifically designed for complete beginners — whether you're coming from a business, arts, science, or social background. We start from the very basics and build your skills systematically. Zero tech experience required.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>How long is the bootcamp and what is the time commitment?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              The bootcamp runs for 12 weeks with live online sessions held multiple times per week. You should expect to commit 8–12 hours per week including live classes, self-study and project work. Sessions are recorded for those who miss a class.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>What equipment do I need to participate?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              You need a working computer (Windows or Mac) with internet access and a smartphone for community engagement. Figma has a free tier that works in any browser, so there are no expensive software costs involved.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Will I receive a certificate after completing the programme?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. Upon successfully completing all modules, projects and your capstone challenge, you'll receive a premium PDU Africa UI/UX Design Certificate. This is a globally recognised credential you can add to your LinkedIn profile, portfolio and CV.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>Can I get a job after this bootcamp?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Our graduates have gone on to work at companies including Google, Paystack, Microsoft, Bolt, Flutterwave, and many more. We provide career support, CV reviews, portfolio critiques, and connect you with our hiring partner network. 85% of our graduates secure a role within 6 months.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>What happens if I miss a class?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              All live sessions are recorded and made available to enrolled students within 24 hours. However, consistent attendance is strongly encouraged — it is tied to your grade scores and progression through the programme.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" aria-expanded="false">
+            <span>I'm a company — can I hire PDU Africa graduates?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Absolutely! We have a talent pipeline of trained, certified UI/UX designers ready for internships, junior roles and freelance contracts. Contact us at <a href="mailto:hire@pduafrica.com">hire@pduafrica.com</a> or reach out via WhatsApp for a curated talent shortlist.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <img src="Pictures/PDU Logo White (1).png" alt="PDU Africa" />
+        <p>Empowering African talent with globally relevant digital skills. PDU Africa is the #1 UI/UX design scholarship bootcamp on the continent — building the next generation of world-class designers.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/pduafrica" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://twitter.com/pduafrica" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/pduafrica" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://facebook.com/pduafrica" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://youtube.com/@pduafrica" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="footer-subscribe">
+          <p>Get bootcamp updates &amp; design resources:</p>
+          <div class="subscribe-form">
+            <input type="email" placeholder="your@email.com" aria-label="Email for newsletter" />
+            <button type="button">Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Programme Links -->
+      <div class="footer-col">
+        <h4>Programme</h4>
+        <ul>
+          <li><a href="#benefits">Why PDU Africa</a></li>
+          <li><a href="#curriculum">Curriculum</a></li>
+          <li><a href="#who-for">Who Is It For</a></li>
+          <li><a href="#certification">Certification</a></li>
+          <li><a href="#kickstart">Enroll Now</a></li>
+          <li><a href="#community">Community</a></li>
+        </ul>
+      </div>
+
+      <!-- Company Links -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="https://idealnovate.com" target="_blank" rel="noopener">About Idealnovate</a></li>
+          <li><a href="https://idealnovate.com/blog" target="_blank" rel="noopener">Design Blog</a></li>
+          <li><a href="https://idealnovate.com/careers" target="_blank" rel="noopener">Careers</a></li>
+          <li><a href="mailto:hire@pduafrica.com">Hire Our Graduates</a></li>
+          <li><a href="https://idealnovate.com/partners" target="_blank" rel="noopener">Partner With Us</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span><a href="mailto:hello@pduafrica.com" style="color:rgba(255,255,255,0.6);">hello@pduafrica.com</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span><a href="https://wa.me/2347000000000" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6);">+234 700 000 0000</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Osun State, Nigeria<br>+40 Countries Served Globally</span>
+        </div>
+        <div class="footer-contact-item" style="margin-top:16px;">
+          <i class="fa-solid fa-clock"></i>
+          <span>Mon–Fri: 9:00am – 6:00pm WAT</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>© 2025 PDU Africa by Idealnovate. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- ===================== SCRIPTS ===================== -->
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, offset: 60, duration: 700, easing: 'ease-out-cubic' });
+</script>
+
+<script>
+(function(){
+  'use strict';
+
+  /* ---- Navbar scroll behaviour ---- */
+  const navbar = document.getElementById('navbar');
+  const backTop = document.getElementById('back-top');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    navbar.classList.toggle('scrolled', y > 40);
+    backTop.classList.toggle('visible', y > 400);
+  }, { passive: true });
+
+  /* ---- Hamburger / mobile nav ---- */
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  hamburger.addEventListener('click', () => {
+    const open = hamburger.classList.toggle('open');
+    mobileNav.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('.mobile-link, .mobile-nav .btn').forEach(el => {
+    el.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', false);
+    });
+  });
+
+  /* ---- Smooth scroll for all anchor links ---- */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      const offset = 84;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+
+  /* ---- Curriculum accordion ---- */
+  document.querySelectorAll('#curriculumAccordion .acc-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.acc-item');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('#curriculumAccordion .acc-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.acc-trigger').setAttribute('aria-expanded', false);
+      });
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', true);
+      }
+    });
+  });
+
+  /* ---- FAQ accordion ---- */
+  document.querySelectorAll('.faq-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-trigger').setAttribute('aria-expanded', false);
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', true);
+      }
+    });
+  });
+
+  /* ---- Newsletter subscribe ---- */
+  document.querySelector('.subscribe-form button')?.addEventListener('click', function() {
+    const input = this.previousElementSibling;
+    const val = input.value.trim();
+    if (!val || !val.includes('@')) {
+      input.style.borderColor = '#ef4444';
+      setTimeout(() => { input.style.borderColor = ''; }, 2000);
+      return;
+    }
+    this.textContent = '✓ Subscribed!';
+    this.style.background = '#0a9e90';
+    input.value = '';
+    setTimeout(() => {
+      this.textContent = 'Subscribe';
+      this.style.background = '';
+    }, 3000);
+  });
+
+})();
+</script>
+
+</body>
+</html>
