@@ -873,6 +873,10 @@
       gap: 24px;
     }
     .project-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
       border-radius: var(--radius-lg);
       overflow: hidden;
       background: var(--bg-base);
@@ -1457,6 +1461,49 @@
       border-top: 1px solid var(--border);
     }
     .modal-secure i { color: var(--primary); }
+    .modal-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: #f0fdf9;
+      border: 1.5px solid #068276;
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+    }
+    .modal-notice-icon {
+      flex-shrink: 0;
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      font-size: 1rem;
+    }
+    .modal-notice-text {
+      font-size: 0.88rem;
+      color: var(--primary-dark);
+      line-height: 1.55;
+    }
+    .modal-notice-text strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 3px;
+    }
+    .modal-notice-text a {
+      display: inline-block;
+      margin-top: 8px;
+      color: #25D366;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.84rem;
+    }
+    .modal-notice-text a:hover { text-decoration: underline; }
     body.modal-open { overflow: hidden; }
     @media (max-width: 600px) {
       .modal-header { padding: 24px 22px 18px; }
@@ -2101,7 +2148,7 @@
 
     <div class="projects-grid">
 
-      <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+      <a class="project-card" href="https://www.figma.com/design/n6V6zqFjX23NuDDVUi2k7b/Untitled?node-id=0-1&t=CEPI80YCqO7JjSCf-1" target="_blank" rel="noopener noreferrer" data-aos="fade-up" data-aos-delay="0">
         <div style="position:relative;">
           <img src="Pictures/OibohFelicitOsose.jpg" alt="Taxi App by Oiboh Felicity Osose" class="project-thumb" loading="lazy" />
           <div class="project-badge">Mobile App</div>
@@ -2118,9 +2165,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card" data-aos="fade-up" data-aos-delay="80">
+      <a class="project-card" href="https://www.figma.com/design/WUYNsGGiVEVPiPpgHZfyDJ/Track-It-App?node-id=0-1&t=w6Qf3TqavkmeDpMh-1" target="_blank" rel="noopener noreferrer" data-aos="fade-up" data-aos-delay="80">
         <div style="position:relative;">
           <img src="Pictures/FadipeIbukunoluwaTemitope.jpg" alt="FinPay by Fadipe Ibukunoluwa Temitope" class="project-thumb" loading="lazy" />
           <div class="project-badge">Mobile App</div>
@@ -2137,9 +2184,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card" data-aos="fade-up" data-aos-delay="160">
+      <a class="project-card" href="https://www.figma.com/design/pMKv8TsWIQyXV1dTneQXlc/Mortgage-web-app?node-id=53-3114&t=aWeT9FEcTaQFNAZV-1" target="_blank" rel="noopener noreferrer" data-aos="fade-up" data-aos-delay="160">
         <div style="position:relative;">
           <img src="Pictures/AyobamiAdeniyiStephen.jpg" alt="XShop by Ayobami Adeniyi Stephen" class="project-thumb" loading="lazy" />
           <div class="project-badge">Web App</div>
@@ -2156,79 +2203,64 @@
             </div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card" data-aos="fade-up" data-aos-delay="0">
-        <div class="project-thumb-placeholder" style="background:linear-gradient(135deg,#1b4332 0%,#2d6a4f 60%,#40916c 100%);">
-          <div class="project-screen">
-            <div class="project-screen-bar" style="background:rgba(255,255,255,0.3);width:70%;"></div>
-            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block accent"></div></div>
-            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block"></div><div class="project-screen-block"></div></div>
-            <div class="project-screen-row"><div class="project-screen-block accent"></div><div class="project-screen-block"></div></div>
-          </div>
-          <div class="project-badge" style="background:#40916c;">EdTech</div>
+      <a class="project-card" href="https://www.figma.com/design/gIZCqnfWtxaLy8tL2PlI5P/Designs?node-id=871-105&t=KIE3LY3AK9eaWLma-0" target="_blank" rel="noopener noreferrer" data-aos="fade-up" data-aos-delay="0">
+        <div style="position:relative;">
+          <img src="Pictures/SMB.jpg" alt="Wave Store by Simphiwe Mildred Blose" class="project-thumb" loading="lazy" />
+          <div class="project-badge">Web App</div>
         </div>
         <div class="project-info">
-          <div class="project-category">EdTech · Mobile UI</div>
-          <h3>LearnPath — Student Learning App</h3>
-          <p>A gamified mobile learning platform designed to help Nigerian secondary school students study and track their WAEC preparation progress.</p>
+          <div class="project-category">ECOMMERCE</div>
+          <h3>Wave Store — Gadget Store</h3>
+          <p>A sleek and modern e-commerce storefront for consumer electronics, designed to deliver a premium online shopping experience for tech enthusiasts.</p>
           <div class="project-author">
-            <div class="project-avatar" style="background:rgba(64,145,108,0.15);color:#2d6a4f;">BO</div>
+            <div class="project-avatar">SM</div>
             <div>
-              <div class="project-author-name">Blessing Okafor</div>
-              <div class="project-author-role">Cohort 3 Graduate · UI Designer at Andela</div>
+              <div class="project-author-name">Simphiwe Mildred Blose</div>
+              <div class="project-author-role">Freelance Designer</div>
             </div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card" data-aos="fade-up" data-aos-delay="80">
-        <div class="project-thumb-placeholder" style="background:linear-gradient(135deg,#4a1942 0%,#7b2d8b 60%,#a855f7 100%);">
-          <div class="project-screen">
-            <div class="project-screen-bar" style="background:rgba(168,85,247,0.4);"></div>
-            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block" style="background:rgba(168,85,247,0.3);"></div><div class="project-screen-block"></div></div>
-            <div class="project-screen-row"><div class="project-screen-block accent"></div><div class="project-screen-block"></div></div>
-            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block"></div><div class="project-screen-block accent"></div></div>
-          </div>
-          <div class="project-badge" style="background:#7b2d8b;">Branding</div>
+      <a class="project-card" href="https://www.figma.com/design/Dx0ThA7OgwW0tZ3n3Oxx0G/MY-PROJECT?node-id=8387-332&t=NbQiOrKJ88Y4KKZf-0" target="_blank" rel="noopener noreferrer" data-aos="fade-up" data-aos-delay="80">
+        <div style="position:relative;">
+          <img src="Pictures/IslamiyatAdeleke.jpg" alt="Tavcan by Islamiyat Adeleke" class="project-thumb" loading="lazy" />
+          <div class="project-badge">Website</div>
         </div>
         <div class="project-info">
-          <div class="project-category">Brand Identity · Web UI</div>
-          <h3>Zuri — African Beauty Brand</h3>
-          <p>Complete brand identity and e-commerce website design for a Lagos-based luxury beauty brand targeting pan-African consumers.</p>
+          <div class="project-category">Agency</div>
+          <h3>Tavcan — Brand Agency Website</h3>
+          <p>A high-impact brand agency website designed to showcase creative portfolios, services, and case studies with bold typography and immersive layouts.</p>
           <div class="project-author">
-            <div class="project-avatar" style="background:rgba(168,85,247,0.12);color:#7b2d8b;">NO</div>
+            <div class="project-avatar">IA</div>
             <div>
-              <div class="project-author-name">Ngozi Onyekwere</div>
-              <div class="project-author-role">Cohort 4 Graduate · Freelance Brand Designer</div>
+              <div class="project-author-name">Islamiyat Adeleke</div>
+              <div class="project-author-role">Now at Miro</div>
             </div>
           </div>
         </div>
-      </div>
+      </a>
 
-      <div class="project-card" data-aos="fade-up" data-aos-delay="160">
-        <div class="project-thumb-placeholder" style="background:linear-gradient(135deg,#7c2d12 0%,#c2410c 60%,#ea580c 100%);">
-          <div class="project-screen">
-            <div class="project-screen-bar" style="background:rgba(234,88,12,0.5);width:55%;"></div>
-            <div class="project-screen-row"><div class="project-screen-block" style="background:rgba(234,88,12,0.3);"></div><div class="project-screen-block"></div></div>
-            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block accent"></div><div class="project-screen-block"></div></div>
-            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block"></div></div>
-          </div>
-          <div class="project-badge" style="background:#c2410c;">FoodTech</div>
+      <a class="project-card" href="https://idealnovate.com" target="_blank" rel="noopener noreferrer" data-aos="fade-up" data-aos-delay="160">
+        <div style="position:relative;">
+          <img src="Pictures/FF.jpg" alt="Idealnovate Educational Website by Micheal Ogundade" class="project-thumb" loading="lazy" />
+          <div class="project-badge">Website</div>
         </div>
         <div class="project-info">
-          <div class="project-category">FoodTech · Mobile UI</div>
-          <h3>ChopNow — Food Delivery App</h3>
-          <p>A bold, user-centred food delivery app with a focus on hyper-local African restaurants and real-time order tracking built for speed.</p>
+          <div class="project-category">Education</div>
+          <h3>Idealnovate — Educational Website</h3>
+          <p>A fully responsive educational platform website designed to showcase Idealnovate Africa's design programs, courses, and community for aspiring creatives.</p>
           <div class="project-author">
-            <div class="project-avatar" style="background:rgba(194,65,12,0.12);color:#c2410c;">IA</div>
+            <div class="project-avatar">MO</div>
             <div>
-              <div class="project-author-name">Ibrahim Abdullahi</div>
-              <div class="project-author-role">Cohort 5 Graduate · Product Designer at Bolt</div>
+              <div class="project-author-name">Micheal Ogundade</div>
+              <div class="project-author-role">Now at Idealnovate Africa</div>
             </div>
           </div>
         </div>
-      </div>
+      </a>
 
     </div>
 
@@ -2767,6 +2799,14 @@
 
     <!-- Body — Cognito Form -->
     <div class="modal-body">
+      <div class="modal-notice">
+        <div class="modal-notice-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="modal-notice-text">
+          <strong>Important Note</strong>
+          After completing your registration, please ensure you join our official WhatsApp community to receive bootcamp updates, schedules, resources, and connect with fellow designers.
+          <a href="https://chat.whatsapp.com/HsS2HiuXHfY2CAjIPSyOrk?s=cl&p=i&ilr=2" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> Join WhatsApp Community &rarr;</a>
+        </div>
+      </div>
       <div id="cognito-form-container"></div>
       <div class="modal-secure">
         <i class="fa-solid fa-shield-halved"></i>
