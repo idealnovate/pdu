@@ -1231,7 +1231,7 @@
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr;
       gap: 48px;
       margin-bottom: 56px;
     }
@@ -1333,8 +1333,40 @@
     #back-top.visible { opacity: 1; pointer-events: auto; }
     #back-top:hover { background: var(--primary-mid); transform: translateY(-3px); }
 
+    /* ===================== FLOATING MOBILE CTA ===================== */
+    #float-enroll {
+      display: none; /* hidden on desktop */
+      position: fixed;
+      bottom: 28px;
+      left: 20px;
+      z-index: 890;
+      background: var(--primary);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: var(--radius-xl);
+      box-shadow: 0 8px 28px rgba(6,130,118,0.45);
+      text-decoration: none;
+      align-items: center;
+      gap: 8px;
+      transition: background var(--transition), transform var(--transition), opacity var(--transition);
+      animation: floatPulse 2.8s ease-in-out infinite;
+    }
+    @keyframes floatPulse {
+      0%,100% { box-shadow: 0 8px 28px rgba(6,130,118,0.45); }
+      50%      { box-shadow: 0 12px 36px rgba(6,130,118,0.65); }
+    }
+    #float-enroll:hover {
+      background: var(--primary-mid);
+      transform: translateY(-2px);
+      color: #fff;
+    }
+
     /* ===================== RESPONSIVE ===================== */
     @media (max-width: 1024px) {
+      #float-enroll { display: flex; }
       .tools-grid { grid-template-columns: repeat(3, 1fr); }
       .curriculum-layout { grid-template-columns: 1fr; }
       .curriculum-sidebar { position: static; }
@@ -1392,7 +1424,7 @@
       <ul class="nav-links" role="list">
         <li><a href="#benefits">Benefits</a></li>
         <li><a href="#curriculum">Curriculum</a></li>
-        <li><a href="#student-work">Students Work</a></li>
+        <li><a href="#student-projects">Students Work</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
 
@@ -1411,7 +1443,7 @@
 <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
   <a href="#benefits" class="mobile-link">Benefits</a>
   <a href="#curriculum" class="mobile-link">Curriculum</a>
-  <a href="#student-work" class="mobile-link">Students Work</a>
+  <a href="#student-projects" class="mobile-link">Students Work</a>
   <a href="#faq" class="mobile-link">FAQ</a>
   <a href="#kickstart" class="btn btn-primary">Enroll Now</a>
 </div>
@@ -1582,6 +1614,12 @@
         <h3>Lovable AI</h3>
         <p>Turn Figma designs into working web apps in minutes — no coding required.</p>
       </div>
+    </div>
+
+    <div class="text-center" style="margin-top:48px;" data-aos="fade-up" data-aos-delay="200">
+      <a href="#kickstart" class="btn btn-accent btn-lg">
+        <i class="fa-solid fa-rocket"></i> Enroll Now — It's Free
+      </a>
     </div>
   </div>
 </section>
@@ -2062,15 +2100,10 @@
     </div>
 
     <div class="projects-cta" data-aos="fade-up">
-      <p style="color:var(--text-muted);margin-bottom:20px;">These are just a sample — our alumni have completed 200+ real-world projects across 15+ industries.</p>
-      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
-        <a href="https://behance.net" target="_blank" rel="noopener" class="btn btn-primary">
-          <i class="fa-solid fa-eye"></i> View More Projects
-        </a>
-        <a href="mailto:hire@pduafrica.com" class="btn btn-secondary">
-          <i class="fa-solid fa-user-tie"></i> Hire Our Graduates
-        </a>
-      </div>
+      <p style="color:var(--text-muted);margin-bottom:20px;">These are just a sample — our alumni have completed 200+ real-world projects across 15+ industries. Join the bootcamp and build yours.</p>
+      <a href="#kickstart" class="btn btn-primary btn-lg">
+        <i class="fa-solid fa-rocket"></i> Enroll Now — It's Free
+      </a>
     </div>
   </div>
 </section>
@@ -2531,13 +2564,6 @@
           <a href="https://facebook.com/pduafrica" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="https://www.youtube.com/@Idealnovate" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
-        <div class="footer-subscribe">
-          <p>Get bootcamp updates &amp; design resources:</p>
-          <div class="subscribe-form">
-            <input type="email" placeholder="your@email.com" aria-label="Email for newsletter" />
-            <button type="button">Subscribe</button>
-          </div>
-        </div>
       </div>
 
       <!-- Programme Links -->
@@ -2553,20 +2579,7 @@
         </ul>
       </div>
 
-      <!-- Company Links -->
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="https://idealnovate.com" target="_blank" rel="noopener">About Idealnovate</a></li>
-          <li><a href="https://idealnovate.com/blog" target="_blank" rel="noopener">Design Blog</a></li>
-          <li><a href="https://idealnovate.com/careers" target="_blank" rel="noopener">Careers</a></li>
-          <li><a href="mailto:hire@pduafrica.com">Hire Our Graduates</a></li>
-          <li><a href="https://idealnovate.com/partners" target="_blank" rel="noopener">Partner With Us</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
+<!-- Contact -->
       <div class="footer-col">
         <h4>Contact Us</h4>
         <div class="footer-contact-item">
@@ -2602,6 +2615,11 @@
     </div>
   </div>
 </footer>
+
+<!-- Floating mobile CTA -->
+<a id="float-enroll" href="#kickstart" aria-label="Enroll Now">
+  <i class="fa-solid fa-rocket"></i> Enroll Now
+</a>
 
 <!-- Back to top -->
 <button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
