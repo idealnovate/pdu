@@ -85,13 +85,18 @@
 
     /* ===================== RESET & BASE ===================== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      overflow-x: clip; /* clip at viewport level without breaking position:sticky */
+    }
     body {
       font-family: var(--font-body);
       color: var(--text-dark);
       background: var(--bg-base);
       line-height: 1.7;
       overflow-x: hidden;
+      max-width: 100%;
     }
     img { max-width: 100%; height: auto; display: block; }
     a { text-decoration: none; color: var(--primary); transition: color var(--transition); }
@@ -108,8 +113,8 @@
 
     /* ===================== UTILITIES ===================== */
     .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
-    .section { padding: 96px 0; }
-    .section-sm { padding: 64px 0; }
+    .section { padding: 96px 0; overflow-x: clip; }
+    .section-sm { padding: 64px 0; overflow-x: clip; }
     .text-center { text-align: center; }
     .tag {
       display: inline-block;
@@ -582,6 +587,7 @@
     .companies-track-wrap {
       overflow: hidden;
       position: relative;
+      max-width: 100%;
     }
     .companies-track-wrap::before,
     .companies-track-wrap::after {
@@ -1554,8 +1560,8 @@
       .section { padding: 64px 0; }
       .hero-grid { grid-template-columns: 1fr; gap: 48px; }
       .hero-image-wrap { order: -1; max-width: 400px; margin: 0 auto; }
-      .hero-float-card.card-1 { left: -12px; bottom: 40px; }
-      .hero-float-card.card-2 { right: -12px; top: 20px; }
+      .hero-float-card.card-1 { left: 0; bottom: 40px; }
+      .hero-float-card.card-2 { right: 0; top: 20px; }
       .benefits-grid { grid-template-columns: 1fr; }
       .tools-grid { grid-template-columns: repeat(2, 1fr); }
       .who-grid { grid-template-columns: 1fr 1fr; }
@@ -1954,12 +1960,12 @@
       <!-- Sidebar -->
       <div class="curriculum-sidebar" data-aos="fade-right">
         <h3>Programme Overview</h3>
-        <p>12-week live online bootcamp designed for absolute beginners with zero tech background.</p>
+        <p>2-week live online bootcamp designed for absolute beginners with zero tech background.</p>
         <div class="curriculum-stats">
-          <div class="cs-item"><span class="cs-num">12</span><span class="cs-lbl">Weeks</span></div>
-          <div class="cs-item"><span class="cs-num">48+</span><span class="cs-lbl">Live Sessions</span></div>
-          <div class="cs-item"><span class="cs-num">10+</span><span class="cs-lbl">Projects</span></div>
-          <div class="cs-item"><span class="cs-num">5</span><span class="cs-lbl">Tools Mastered</span></div>
+          <div class="cs-item"><span class="cs-num">2</span><span class="cs-lbl">Weeks</span></div>
+          <div class="cs-item"><span class="cs-num">14hrs</span><span class="cs-lbl">Live Sessions</span></div>
+          <div class="cs-item"><span class="cs-num">5+</span><span class="cs-lbl">Projects</span></div>
+          <div class="cs-item"><span class="cs-num">4</span><span class="cs-lbl">Tools Mastered</span></div>
         </div>
         <div style="background:rgba(6,130,118,0.06);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px;">
           <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:12px;">
@@ -2819,8 +2825,8 @@
 </div>
 
 <!-- Floating mobile CTA -->
-<a id="float-enroll" href="#kickstart" aria-label="Enroll Now">
-  <i class="fa-solid fa-rocket"></i> Enroll Now
+<a id="float-enroll" href="#kickstart" aria-label="Click to Enroll">
+  <i class="fa-solid fa-rocket"></i> Click to Enroll
 </a>
 
 <!-- Back to top -->
