@@ -1333,6 +1333,120 @@
     #back-top.visible { opacity: 1; pointer-events: auto; }
     #back-top:hover { background: var(--primary-mid); transform: translateY(-3px); }
 
+    /* ===================== ENROLLMENT MODAL ===================== */
+    #enroll-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    #enroll-modal.open {
+      visibility: visible;
+      pointer-events: all;
+    }
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(2,44,40,0.72);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    #enroll-modal.open .modal-backdrop { opacity: 1; }
+    .modal-box {
+      position: relative;
+      background: #fff;
+      border-radius: var(--radius-xl);
+      width: 100%;
+      max-width: 660px;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 40px 100px rgba(2,44,40,0.3), 0 0 0 1px rgba(6,130,118,0.08);
+      transform: translateY(28px) scale(0.96);
+      opacity: 0;
+      transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), opacity 0.32s ease;
+      overflow: hidden;
+    }
+    #enroll-modal.open .modal-box {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    .modal-header {
+      padding: 32px 40px 24px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      background: linear-gradient(135deg, #f0fdf9 0%, #ffffff 100%);
+      flex-shrink: 0;
+    }
+    .modal-logo { height: 38px; width: auto; margin-bottom: 18px; }
+    .modal-header-tag {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: rgba(6,130,118,0.1);
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+    .modal-header h2 {
+      font-size: clamp(1.4rem, 3vw, 1.85rem);
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .modal-header p { font-size: 0.97rem; color: var(--text-muted); margin: 0; line-height: 1.6; }
+    .modal-close {
+      position: absolute;
+      top: 18px; right: 18px;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 1.3rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition);
+      line-height: 1;
+      box-shadow: var(--shadow-sm);
+    }
+    .modal-close:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: scale(1.05); }
+    .modal-body {
+      padding: 28px 40px 36px;
+      overflow-y: auto;
+      flex: 1;
+      -webkit-overflow-scrolling: touch;
+    }
+    .modal-secure {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .modal-secure i { color: var(--primary); }
+    body.modal-open { overflow: hidden; }
+    @media (max-width: 600px) {
+      .modal-header { padding: 24px 22px 18px; }
+      .modal-body   { padding: 20px 22px 28px; }
+      .modal-box    { border-radius: var(--radius-lg); max-height: 95vh; }
+    }
+
     /* ===================== FLOATING MOBILE CTA ===================== */
     #float-enroll {
       display: none; /* hidden on desktop */
@@ -2616,6 +2730,34 @@
   </div>
 </footer>
 
+<!-- ===================== ENROLLMENT MODAL ===================== -->
+<div id="enroll-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-backdrop"></div>
+  <div class="modal-box">
+
+    <!-- Header -->
+    <div class="modal-header">
+      <img src="Pictures/PDU Logo Dark (1).png" alt="PDU Africa" class="modal-logo" />
+      <div class="modal-header-tag">Free Scholarship Bootcamp</div>
+      <h2 id="modal-title">Enrollment Form</h2>
+      <p>Take the first step towards your new career in UI/UX Design.</p>
+      <button class="modal-close" aria-label="Close enrollment form">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Body — Cognito Form -->
+    <div class="modal-body">
+      <div id="cognito-form-container"></div>
+      <div class="modal-secure">
+        <i class="fa-solid fa-shield-halved"></i>
+        Your information is safe and will never be shared with third parties.
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <!-- Floating mobile CTA -->
 <a id="float-enroll" href="#kickstart" aria-label="Enroll Now">
   <i class="fa-solid fa-rocket"></i> Enroll Now
@@ -2662,11 +2804,50 @@
     });
   });
 
-  /* ---- Smooth scroll for all anchor links ---- */
+  /* ---- Enrollment Modal ---- */
+  const modal        = document.getElementById('enroll-modal');
+  const modalBackdrop = modal.querySelector('.modal-backdrop');
+  const modalClose   = modal.querySelector('.modal-close');
+  let cognitoLoaded  = false;
+
+  function openModal(e) {
+    if (e) { e.preventDefault(); e.stopImmediatePropagation(); }
+    modal.classList.add('open');
+    document.body.classList.add('modal-open');
+    if (!cognitoLoaded) {
+      cognitoLoaded = true;
+      const s = document.createElement('script');
+      s.src = 'https://www.cognitoforms.com/f/seamless.js';
+      s.setAttribute('data-key', '0z7GRyjg-kyy_UPUrxKnSw');
+      s.setAttribute('data-form', '28');
+      document.getElementById('cognito-form-container').appendChild(s);
+    }
+    setTimeout(() => modalClose.focus(), 60);
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.classList.remove('modal-open');
+  }
+
+  /* Trigger: all href="#kickstart" and the external forms.gle link */
+  document.querySelectorAll(
+    'a[href="#kickstart"], a[href="https://forms.gle/pduafrica"]'
+  ).forEach(a => a.addEventListener('click', openModal));
+
+  /* Close triggers */
+  modalClose.addEventListener('click', closeModal);
+  modalBackdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+
+  /* ---- Smooth scroll for all non-modal anchor links ---- */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const id = a.getAttribute('href');
-      if (id === '#') return;
+      /* #kickstart is intercepted by modal handler above — skip here */
+      if (id === '#' || id === '#kickstart') return;
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
@@ -2710,23 +2891,6 @@
     });
   });
 
-  /* ---- Newsletter subscribe ---- */
-  document.querySelector('.subscribe-form button')?.addEventListener('click', function() {
-    const input = this.previousElementSibling;
-    const val = input.value.trim();
-    if (!val || !val.includes('@')) {
-      input.style.borderColor = '#ef4444';
-      setTimeout(() => { input.style.borderColor = ''; }, 2000);
-      return;
-    }
-    this.textContent = '✓ Subscribed!';
-    this.style.background = '#0a9e90';
-    input.value = '';
-    setTimeout(() => {
-      this.textContent = 'Subscribe';
-      this.style.background = '';
-    }, 3000);
-  });
 
 })();
 </script>
