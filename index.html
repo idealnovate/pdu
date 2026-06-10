@@ -9,6 +9,9 @@
   <meta property="og:description" content="Learn practical UI/UX design for FREE with zero tech experience." />
   <meta name="theme-color" content="#068276" />
   <title>PDU Africa | UI/UX Design Scholarship Bootcamp</title>
+  <!-- Site Icon / Favicon -->
+  <link rel="icon" type="image/jpeg" href="Pictures/SiteIcon.jpg" />
+  <link rel="apple-touch-icon" href="Pictures/SiteIcon.jpg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -769,7 +772,7 @@
 
     /* ===================== CERTIFICATION ===================== */
     #certification {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-mid) 100%);
+      background: var(--bg-base);
       position: relative;
       overflow: hidden;
     }
@@ -779,65 +782,254 @@
       top: -100px; right: -100px;
       width: 450px; height: 450px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(6,130,118,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #certification::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(244,168,94,0.07) 0%, transparent 70%);
+      pointer-events: none;
     }
     .cert-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      gap: 72px;
       align-items: center;
     }
-    .cert-content .tag { background: rgba(255,255,255,0.12); color: #fff; }
-    .cert-content h2 { color: #fff; margin-bottom: 16px; }
-    .cert-content p { color: rgba(255,255,255,0.75); margin-bottom: 28px; }
+    .cert-content .tag { background: rgba(6,130,118,0.1); color: var(--primary); }
+    .cert-content h2 { color: var(--primary-dark); margin-bottom: 16px; }
+    .cert-content > p { color: var(--text-muted); margin-bottom: 28px; }
     .cert-steps { margin-bottom: 36px; }
     .cert-step {
       display: flex;
       align-items: flex-start;
       gap: 16px;
       margin-bottom: 20px;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      transition: all var(--transition);
+    }
+    .cert-step:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-sm);
     }
     .cert-step-num {
-      width: 36px; height: 36px;
+      width: 40px; height: 40px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.15);
-      border: 2px solid rgba(255,255,255,0.3);
+      background: var(--primary);
       color: #fff;
       font-family: var(--font-heading);
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(6,130,118,0.3);
     }
-    .cert-step-text h4 { color: #fff; font-size: 1rem; margin-bottom: 4px; }
-    .cert-step-text p { color: rgba(255,255,255,0.65); font-size: 0.88rem; margin: 0; }
+    .cert-step-text h4 { color: var(--primary-dark); font-size: 1rem; margin-bottom: 4px; }
+    .cert-step-text p { color: var(--text-muted); font-size: 0.88rem; margin: 0; line-height: 1.55; }
     .cert-visual {
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .cert-card-mock {
-      background: #fff;
+    .cert-img-real {
+      width: 100%;
+      max-width: 480px;
       border-radius: var(--radius-lg);
-      padding: 40px 36px;
-      text-align: center;
       box-shadow: var(--shadow-lg);
-      width: 320px;
-      max-width: 100%;
+      border: 6px solid #fff;
+      outline: 1px solid var(--border);
     }
-    .cert-card-mock .cert-seal {
-      width: 80px; height: 80px;
+
+    /* ===================== STUDENT PROJECTS ===================== */
+    #student-projects { background: #fff; }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .project-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--bg-base);
+      border: 1px solid var(--border);
+      transition: all var(--transition);
+      position: relative;
+    }
+    .project-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+    .project-thumb {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    }
+    .project-thumb-placeholder {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, #022c28 0%, #068276 60%, #0a9e90 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-thumb-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .project-screen {
+      width: 75%;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .project-screen-bar {
+      height: 8px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 4px;
+      margin-bottom: 8px;
+      width: 60%;
+    }
+    .project-screen-row {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .project-screen-block {
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.15);
+      flex: 1;
+    }
+    .project-screen-block.accent { background: rgba(244,168,94,0.5); }
+    .project-badge {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-family: var(--font-heading);
+    }
+    .project-info { padding: 20px 22px 24px; }
+    .project-category {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 6px;
+    }
+    .project-info h3 { font-size: 1rem; color: var(--primary-dark); margin-bottom: 8px; }
+    .project-info p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+    .project-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .project-avatar {
+      width: 32px; height: 32px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      margin: 0 auto 20px;
+      background: var(--primary);
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 0.7rem;
+      font-weight: 700;
       display: flex; align-items: center; justify-content: center;
-      font-size: 2rem;
+      flex-shrink: 0;
     }
-    .cert-card-mock h4 { font-size: 1.05rem; color: var(--primary-dark); margin-bottom: 6px; }
-    .cert-card-mock p { font-size: 0.82rem; color: var(--text-muted); }
-    .cert-card-mock .cert-name { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 700; color: var(--primary); margin: 16px 0; font-style: italic; }
-    .cert-card-mock .cert-program { font-size: 0.85rem; font-weight: 600; color: var(--text-mid); }
+    .project-author-name { font-size: 0.82rem; font-weight: 600; color: var(--text-dark); }
+    .project-author-role { font-size: 0.75rem; color: var(--text-muted); }
+    .projects-cta { margin-top: 48px; text-align: center; }
+
+    /* ===================== TESTIMONIALS ===================== */
+    #testimonials { background: var(--bg-base); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testi-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      position: relative;
+      transition: all var(--transition);
+    }
+    .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--primary); }
+    .testi-card.featured {
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+    .testi-quote {
+      font-size: 2.5rem;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 12px;
+      font-family: Georgia, serif;
+    }
+    .testi-card.featured .testi-quote { color: rgba(255,255,255,0.4); }
+    .testi-stars {
+      color: #f4a85e;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+    .testi-card.featured .testi-stars { color: #f4d085; }
+    .testi-text {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+    .testi-card.featured .testi-text { color: rgba(255,255,255,0.88); }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      background: rgba(6,130,118,0.1);
+      color: var(--primary);
+    }
+    .testi-card.featured .testi-avatar { background: rgba(255,255,255,0.2); color: #fff; }
+    .testi-name { font-family: var(--font-heading); font-size: 0.92rem; font-weight: 700; color: var(--text-dark); }
+    .testi-card.featured .testi-name { color: #fff; }
+    .testi-role { font-size: 0.78rem; color: var(--text-muted); }
+    .testi-card.featured .testi-role { color: rgba(255,255,255,0.65); }
+    .testi-tag {
+      position: absolute;
+      top: 20px; right: 20px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: rgba(6,130,118,0.1);
+      color: var(--primary);
+    }
+    .testi-card.featured .testi-tag { background: rgba(255,255,255,0.18); color: #fff; }
 
     /* ===================== COMMUNITY ===================== */
     #community { background: #fff; }
@@ -1149,6 +1341,8 @@
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
       .faq-layout { grid-template-columns: 1fr; }
       .faq-sidebar { position: static; }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
       .section { padding: 64px 0; }
@@ -1162,6 +1356,7 @@
       .qual-grid { grid-template-columns: 1fr; gap: 40px; }
       .qual-image-wrap { order: -1; }
       .cert-grid { grid-template-columns: 1fr; }
+      .cert-visual { order: -1; }
       .community-grid { grid-template-columns: 1fr; gap: 40px; }
       .kickstart-box { padding: 48px 28px; }
       .kickstart-steps { gap: 0; }
@@ -1171,6 +1366,8 @@
       .hamburger { display: flex; }
       .companies-stat-row { gap: 28px; }
       .hero-features { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
       .who-grid { grid-template-columns: 1fr; }
@@ -1179,7 +1376,6 @@
       .ks-arrow { transform: rotate(90deg); }
       .hero-buttons { flex-direction: column; }
       .btn-lg { width: 100%; justify-content: center; }
-      .cert-card-mock { width: 100%; }
     }
   </style>
 </head>
@@ -1273,7 +1469,7 @@
           <a href="#kickstart" class="btn btn-primary btn-lg">
             <i class="fa-solid fa-rocket"></i> Enroll Now — It's FREE
           </a>
-          <a href="https://wa.me/2347000000000" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
+          <a href="https://wa.me/2349065436488" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
             <i class="fa-brands fa-whatsapp"></i> Talk to Admissions
           </a>
         </div>
@@ -1296,7 +1492,7 @@
         />
         <div class="hero-float-card card-1">
           <div class="float-label">Next Cohort Starts</div>
-          <div class="float-value">July 2025</div>
+          <div class="float-value">June 2026</div>
           <div class="float-sub">Limited seats available</div>
         </div>
         <div class="hero-float-card card-2">
@@ -1340,6 +1536,12 @@
         <h3>Community Support</h3>
         <p>Join a thriving network of <strong>3,120+ designers</strong> across Africa. Get peer feedback, collaborate on projects, attend live events, and stay connected to a community that grows with you long after graduation.</p>
       </div>
+    </div>
+
+    <div class="text-center" style="margin-top:48px;" data-aos="fade-up" data-aos-delay="200">
+      <a href="#kickstart" class="btn btn-primary btn-lg">
+        <i class="fa-solid fa-rocket"></i> Enroll Now — It's Free
+      </a>
     </div>
   </div>
 </section>
@@ -1453,7 +1655,7 @@
       <!-- Left -->
       <div data-aos="fade-right">
         <div class="tag">Requirements</div>
-        <h2 class="qual-header">We've Got Your Back</h2>
+        <h2 class="qual-header">Qualification Process</h2>
         <p class="qual-sub">From application to graduation, our team supports you every step of the way. Here's what we ask in return for this premium, free training:</p>
 
         <div class="qual-list">
@@ -1684,6 +1886,292 @@
 
       </div>
     </div>
+
+    <!-- Curriculum CTA -->
+    <div class="text-center" style="margin-top:56px;padding:40px;background:linear-gradient(135deg,var(--bg-base),#e8faf7);border-radius:var(--radius-xl);border:1px solid var(--border);" data-aos="fade-up">
+      <h3 style="color:var(--primary-dark);margin-bottom:12px;">Ready to Start This Journey?</h3>
+      <p style="color:var(--text-muted);max-width:480px;margin:0 auto 24px;">Secure your free seat in the next cohort and begin building the UI/UX career you deserve — starting with Week 1 this month.</p>
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+        <a href="#kickstart" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-rocket"></i> Claim Your Free Spot
+        </a>
+        <a href="https://wa.me/2349065436488" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
+          <i class="fa-brands fa-whatsapp"></i> Ask a Question
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STUDENT PROJECTS ===================== -->
+<section id="student-projects" class="section" style="background:#fff;">
+  <div class="container">
+    <div class="section-header center" data-aos="fade-up">
+      <div class="tag">Alumni Work</div>
+      <h2>Designs That Speak<br>for Themselves</h2>
+      <div class="divider center"></div>
+      <p>Real projects. Real students. See the calibre of work our graduates create during and after the bootcamp — and imagine what you'll build.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="project-thumb-placeholder">
+          <div class="project-screen">
+            <div class="project-screen-bar"></div>
+            <div class="project-screen-row"><div class="project-screen-block accent"></div><div class="project-screen-block"></div><div class="project-screen-block"></div></div>
+            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block"></div></div>
+            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block accent"></div><div class="project-screen-block"></div></div>
+          </div>
+          <div class="project-badge">Mobile App</div>
+        </div>
+        <div class="project-info">
+          <div class="project-category">Fintech · Mobile UI</div>
+          <h3>FinPay — Digital Wallet App</h3>
+          <p>A clean, intuitive mobile wallet redesign focused on reducing friction in peer-to-peer transfers for African users.</p>
+          <div class="project-author">
+            <div class="project-avatar">AU</div>
+            <div>
+              <div class="project-author-name">Aisha Usman</div>
+              <div class="project-author-role">Cohort 3 Graduate · Now at Moniepoint</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="project-thumb-placeholder" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 60%,#0f3460 100%);">
+          <div class="project-screen">
+            <div class="project-screen-bar" style="width:80%;background:rgba(244,168,94,0.5);"></div>
+            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block" style="background:rgba(244,168,94,0.3);"></div></div>
+            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block"></div><div class="project-screen-block"></div></div>
+            <div class="project-screen-row"><div class="project-screen-block" style="background:rgba(244,168,94,0.5);"></div><div class="project-screen-block"></div></div>
+          </div>
+          <div class="project-badge" style="background:var(--primary);">Web App</div>
+        </div>
+        <div class="project-info">
+          <div class="project-category">E-commerce · Web UI</div>
+          <h3>Shopika — African Fashion Marketplace</h3>
+          <p>An end-to-end e-commerce platform designed for African fashion brands to reach global buyers with a seamless checkout experience.</p>
+          <div class="project-author">
+            <div class="project-avatar" style="background:rgba(244,168,94,0.15);color:var(--accent-dark);">KO</div>
+            <div>
+              <div class="project-author-name">Kelechi Obi</div>
+              <div class="project-author-role">Cohort 4 Graduate · Freelance Designer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="project-thumb-placeholder" style="background:linear-gradient(135deg,#0a2540 0%,#1a5276 60%,#2e86c1 100%);">
+          <div class="project-screen">
+            <div class="project-screen-bar" style="width:45%;"></div>
+            <div class="project-screen-row"><div class="project-screen-block" style="height:24px;border-radius:4px;background:rgba(255,255,255,0.2);"></div></div>
+            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block"></div><div class="project-screen-block accent"></div></div>
+            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block"></div></div>
+          </div>
+          <div class="project-badge" style="background:#2e86c1;">Dashboard</div>
+        </div>
+        <div class="project-info">
+          <div class="project-category">SaaS · Analytics Dashboard</div>
+          <h3>MediTrack — Healthcare Dashboard</h3>
+          <p>A responsive healthcare management dashboard that makes patient data, appointments and billing beautifully simple for clinics.</p>
+          <div class="project-author">
+            <div class="project-avatar" style="background:rgba(46,134,193,0.1);color:#2e86c1;">FA</div>
+            <div>
+              <div class="project-author-name">Fatima Aliyu</div>
+              <div class="project-author-role">Cohort 5 Graduate · Junior Designer at Vital Relief</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="project-thumb-placeholder" style="background:linear-gradient(135deg,#1b4332 0%,#2d6a4f 60%,#40916c 100%);">
+          <div class="project-screen">
+            <div class="project-screen-bar" style="background:rgba(255,255,255,0.3);width:70%;"></div>
+            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block accent"></div></div>
+            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block"></div><div class="project-screen-block"></div></div>
+            <div class="project-screen-row"><div class="project-screen-block accent"></div><div class="project-screen-block"></div></div>
+          </div>
+          <div class="project-badge" style="background:#40916c;">EdTech</div>
+        </div>
+        <div class="project-info">
+          <div class="project-category">EdTech · Mobile UI</div>
+          <h3>LearnPath — Student Learning App</h3>
+          <p>A gamified mobile learning platform designed to help Nigerian secondary school students study and track their WAEC preparation progress.</p>
+          <div class="project-author">
+            <div class="project-avatar" style="background:rgba(64,145,108,0.15);color:#2d6a4f;">BO</div>
+            <div>
+              <div class="project-author-name">Blessing Okafor</div>
+              <div class="project-author-role">Cohort 3 Graduate · UI Designer at Andela</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="project-thumb-placeholder" style="background:linear-gradient(135deg,#4a1942 0%,#7b2d8b 60%,#a855f7 100%);">
+          <div class="project-screen">
+            <div class="project-screen-bar" style="background:rgba(168,85,247,0.4);"></div>
+            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block" style="background:rgba(168,85,247,0.3);"></div><div class="project-screen-block"></div></div>
+            <div class="project-screen-row"><div class="project-screen-block accent"></div><div class="project-screen-block"></div></div>
+            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block"></div><div class="project-screen-block accent"></div></div>
+          </div>
+          <div class="project-badge" style="background:#7b2d8b;">Branding</div>
+        </div>
+        <div class="project-info">
+          <div class="project-category">Brand Identity · Web UI</div>
+          <h3>Zuri — African Beauty Brand</h3>
+          <p>Complete brand identity and e-commerce website design for a Lagos-based luxury beauty brand targeting pan-African consumers.</p>
+          <div class="project-author">
+            <div class="project-avatar" style="background:rgba(168,85,247,0.12);color:#7b2d8b;">NO</div>
+            <div>
+              <div class="project-author-name">Ngozi Onyekwere</div>
+              <div class="project-author-role">Cohort 4 Graduate · Freelance Brand Designer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="project-thumb-placeholder" style="background:linear-gradient(135deg,#7c2d12 0%,#c2410c 60%,#ea580c 100%);">
+          <div class="project-screen">
+            <div class="project-screen-bar" style="background:rgba(234,88,12,0.5);width:55%;"></div>
+            <div class="project-screen-row"><div class="project-screen-block" style="background:rgba(234,88,12,0.3);"></div><div class="project-screen-block"></div></div>
+            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block accent"></div><div class="project-screen-block"></div></div>
+            <div class="project-screen-row"><div class="project-screen-block"></div><div class="project-screen-block"></div></div>
+          </div>
+          <div class="project-badge" style="background:#c2410c;">FoodTech</div>
+        </div>
+        <div class="project-info">
+          <div class="project-category">FoodTech · Mobile UI</div>
+          <h3>ChopNow — Food Delivery App</h3>
+          <p>A bold, user-centred food delivery app with a focus on hyper-local African restaurants and real-time order tracking built for speed.</p>
+          <div class="project-author">
+            <div class="project-avatar" style="background:rgba(194,65,12,0.12);color:#c2410c;">IA</div>
+            <div>
+              <div class="project-author-name">Ibrahim Abdullahi</div>
+              <div class="project-author-role">Cohort 5 Graduate · Product Designer at Bolt</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="projects-cta" data-aos="fade-up">
+      <p style="color:var(--text-muted);margin-bottom:20px;">These are just a sample — our alumni have completed 200+ real-world projects across 15+ industries.</p>
+      <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+        <a href="https://behance.net" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="fa-solid fa-eye"></i> View More Projects
+        </a>
+        <a href="mailto:hire@pduafrica.com" class="btn btn-secondary">
+          <i class="fa-solid fa-user-tie"></i> Hire Our Graduates
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section id="testimonials" class="section">
+  <div class="container">
+    <div class="section-header center" data-aos="fade-up">
+      <div class="tag">Testimonials</div>
+      <h2>Straight From the Mouths<br>of Our Designers</h2>
+      <div class="divider center"></div>
+      <p>Don't take our word for it — hear what real students and hiring partners have to say about their PDU Africa experience.</p>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <div class="testi-card featured" data-aos="fade-up" data-aos-delay="0">
+        <div class="testi-tag">⭐ Top Review</div>
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I enrolled with zero design knowledge — I didn't even know what Figma was. Eight weeks later, I had a portfolio of three projects and landed a junior UI/UX role at a fintech startup paying ₦420,000 monthly. PDU Africa didn't just teach me design, they rebuilt my confidence.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AU</div>
+          <div>
+            <div class="testi-name">Aisha Usman</div>
+            <div class="testi-role">Junior UI Designer — Moniepoint · Lagos, Nigeria</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="testi-tag">Alumni</div>
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">The live sessions were incredibly practical. My instructor didn't just walk us through slides — we were designing real apps every week. By the time I graduated, my portfolio was stronger than designers I'd seen with 2 years of experience. I now work remotely for a UK-based startup.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">KE</div>
+          <div>
+            <div class="testi-name">Kelechi Eze</div>
+            <div class="testi-role">Product Designer (Remote) — London, UK</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="testi-tag">Alumni</div>
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I was a secondary school teacher earning ₦85,000 a month. Six months after completing the PDU Africa bootcamp, I resigned and now earn ₦350,000 monthly as a freelance UI/UX designer. The community support even after graduation is unmatched — they genuinely care about your success.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">FA</div>
+          <div>
+            <div class="testi-name">Fatima Aliyu</div>
+            <div class="testi-role">Freelance UI/UX Designer — Abuja, Nigeria</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="testi-tag">Alumni</div>
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">What makes PDU Africa different is that every session felt like a real-world design sprint. We weren't designing for grades — we were designing for users. The mentors pushed us hard, gave honest feedback, and celebrated every win. I didn't expect free training to be this premium.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">BO</div>
+          <div>
+            <div class="testi-name">Blessing Okafor</div>
+            <div class="testi-role">UI/UX Designer — Andela Network · Port Harcourt</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="testi-tag">Hiring Partner</div>
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">We hired three PDU Africa graduates for our product team over the past year. What stood out was not just their Figma skills but their ability to think about users, ask the right questions and communicate design decisions clearly. We'll keep hiring from this pipeline.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(6,130,118,0.1);color:var(--primary);">TM</div>
+          <div>
+            <div class="testi-name">Taiwo Mensah</div>
+            <div class="testi-role">Head of Product — Paystack · Lagos</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="testi-tag">Alumni</div>
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">I was skeptical about a free bootcamp — I'd tried others that felt hollow. PDU Africa was the opposite. The curriculum was current, the tools we used are exactly what the industry uses, and my mentor was available every week. Three months out, I'm billing ₦500k per project.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(168,85,247,0.1);color:#7b2d8b;">NO</div>
+          <div>
+            <div class="testi-name">Ngozi Onyekwere</div>
+            <div class="testi-role">Senior Freelance Designer — Enugu, Nigeria</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -1736,67 +2224,62 @@
 <!-- ===================== CERTIFICATION ===================== -->
 <section id="certification" class="section">
   <div class="container">
+    <div class="section-header center" data-aos="fade-up" style="margin-bottom:56px;">
+      <div class="tag">Certification</div>
+      <h2>Earn a Globally Recognised<br>Professional Certificate</h2>
+      <div class="divider center"></div>
+      <p>Complete the bootcamp. Ship your capstone. Walk away with a credential that opens doors across Africa and beyond.</p>
+    </div>
+
     <div class="cert-grid">
       <!-- Left content -->
       <div data-aos="fade-right">
-        <div class="tag">Certification</div>
-        <h2>Earn a Globally Recognised<br>Professional Certificate</h2>
-        <div class="divider"></div>
-        <p>Upon completing the PDU Africa UI/UX Design Scholarship Bootcamp, you'll receive a premium digital and physical certificate that validates your skills to employers worldwide.</p>
+        <p style="color:var(--text-muted);margin-bottom:28px;font-size:1.05rem;">Upon completing the PDU Africa UI/UX Design Scholarship Bootcamp, you'll receive a premium verifiable certificate that validates your skills to employers worldwide — both digitally and in print.</p>
 
         <div class="cert-steps">
           <div class="cert-step">
             <div class="cert-step-num">1</div>
             <div class="cert-step-text">
               <h4>Complete All 12 Modules</h4>
-              <p>Attend live sessions, submit all projects and meet the weekly grade score</p>
+              <p>Attend live sessions, submit all projects and meet the weekly grade score throughout the programme.</p>
             </div>
           </div>
           <div class="cert-step">
             <div class="cert-step-num">2</div>
             <div class="cert-step-text">
               <h4>Pass Your Capstone Project</h4>
-              <p>Present your end-to-end design project to a panel of industry mentors</p>
+              <p>Present your end-to-end design project to a panel of industry mentors for live critique and sign-off.</p>
             </div>
           </div>
           <div class="cert-step">
             <div class="cert-step-num">3</div>
             <div class="cert-step-text">
               <h4>Receive Your Certificate</h4>
-              <p>Get your premium, verifiable PDU Africa UI/UX design certificate</p>
+              <p>Get your premium, verifiable PDU Africa UI/UX design certificate — shareable on LinkedIn, your CV and portfolio.</p>
             </div>
           </div>
           <div class="cert-step">
             <div class="cert-step-num">4</div>
             <div class="cert-step-text">
-              <h4>Unlock Career Support</h4>
-              <p>Access job placement support, portfolio reviews and alumni network</p>
+              <h4>Unlock Lifetime Career Support</h4>
+              <p>Access job placement assistance, portfolio reviews, alumni network and exclusive hiring partner introductions.</p>
             </div>
           </div>
         </div>
 
-        <a href="#kickstart" class="btn btn-accent btn-lg">
+        <a href="#kickstart" class="btn btn-primary btn-lg">
           <i class="fa-solid fa-certificate"></i> Start Earning Your Certificate
         </a>
       </div>
 
-      <!-- Right — certificate mockup -->
+      <!-- Right — actual certificate image -->
       <div class="cert-visual" data-aos="fade-left" data-aos-delay="150">
-        <div class="cert-card-mock">
-          <div class="cert-seal">🎓</div>
-          <p style="font-size:0.78rem;color:var(--text-muted);letter-spacing:0.12em;text-transform:uppercase;">Certificate of Completion</p>
-          <p style="font-size:0.82rem;margin:8px 0 4px;color:var(--text-muted);">This certifies that</p>
-          <div class="cert-name">Your Name Here</div>
-          <div class="cert-program">Elementary UI/UX Design Bootcamp</div>
-          <div style="margin:20px 0;height:1px;background:var(--border);"></div>
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <div style="text-align:left;">
-              <div style="font-size:0.7rem;color:var(--text-muted);">Issued by</div>
-              <div style="font-size:0.82rem;font-weight:700;color:var(--primary-dark);">PDU Africa</div>
-            </div>
-            <img src="Pictures/PDU Logo Dark (1).png" alt="PDU Africa" style="height:28px;width:auto;" />
-          </div>
-        </div>
+        <img
+          src="Pictures/WebSample.jpg"
+          alt="PDU Africa UI/UX Design Certificate Sample"
+          class="cert-img-real"
+          loading="lazy"
+        />
       </div>
     </div>
   </div>
@@ -1824,7 +2307,7 @@
           <div class="comm-perk">
             <div class="comm-perk-icon"><i class="fa-brands fa-whatsapp"></i></div>
             <div class="comm-perk-text">
-              <h4>Active WhatsApp &amp; Slack Community</h4>
+              <h4>Active WhatsApp &amp; Telegram Community</h4>
               <p>Daily conversations, job leads, feedback and peer support with fellow designers.</p>
             </div>
           </div>
@@ -1903,7 +2386,7 @@
         <a href="https://forms.gle/pduafrica" target="_blank" rel="noopener" class="btn btn-white btn-lg">
           <i class="fa-solid fa-pen-to-square"></i> Enroll Now — It's FREE
         </a>
-        <a href="https://wa.me/2347000000000" target="_blank" rel="noopener" class="btn btn-lg" style="background:rgba(255,255,255,0.15);color:#fff;border:2px solid rgba(255,255,255,0.35);">
+        <a href="https://wa.me/2349065436488" target="_blank" rel="noopener" class="btn btn-lg" style="background:rgba(255,255,255,0.15);color:#fff;border:2px solid rgba(255,255,255,0.35);">
           <i class="fa-brands fa-whatsapp"></i> Chat With Us
         </a>
       </div>
@@ -1924,7 +2407,7 @@
         <div class="faq-contact">
           <p>Contact our admissions team:</p>
           <a href="mailto:hello@pduafrica.com"><i class="fa-solid fa-envelope"></i> hello@pduafrica.com</a>
-          <a href="https://wa.me/2347000000000" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+          <a href="https://wa.me/2349065436488" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
           <a href="https://instagram.com/pduafrica" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> @pduafrica</a>
         </div>
       </div>
@@ -2046,7 +2529,7 @@
           <a href="https://twitter.com/pduafrica" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
           <a href="https://linkedin.com/company/pduafrica" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="https://facebook.com/pduafrica" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://youtube.com/@pduafrica" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.youtube.com/@Idealnovate" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
         </div>
         <div class="footer-subscribe">
           <p>Get bootcamp updates &amp; design resources:</p>
@@ -2092,15 +2575,18 @@
         </div>
         <div class="footer-contact-item">
           <i class="fa-brands fa-whatsapp"></i>
-          <span><a href="https://wa.me/2347000000000" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6);">+234 700 000 0000</a></span>
+          <span>
+            <a href="https://wa.me/2349065436488" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6);">+234 906 543 6488</a><br>
+            <a href="https://wa.me/2348079680209" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6);">+234 807 968 0209</a>
+          </span>
         </div>
         <div class="footer-contact-item">
           <i class="fa-solid fa-location-dot"></i>
-          <span>Osun State, Nigeria<br>+40 Countries Served Globally</span>
+          <span>73 Hammed Omidiran Way,<br>Kolabalogun Cres, Osogbo,<br>Osun State, Nigeria</span>
         </div>
         <div class="footer-contact-item" style="margin-top:16px;">
           <i class="fa-solid fa-clock"></i>
-          <span>Mon–Fri: 9:00am – 6:00pm WAT</span>
+          <span>Mon–Fri: 9:00am – 5:00pm WAT</span>
         </div>
       </div>
     </div>
