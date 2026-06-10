@@ -244,7 +244,20 @@
       border-bottom: 1px solid #f0f0f0;
     }
     .mobile-nav a:hover { color: var(--primary); }
-    .mobile-nav .btn { margin-top: 16px; width: 100%; justify-content: center; }
+    .mobile-nav .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px 22px;
+      font-size: 1rem;
+      color: #fff;
+      border-bottom: none;
+      border-radius: var(--radius-md);
+      box-sizing: border-box;
+    }
+    .mobile-nav .btn:hover { color: #fff; }
 
     /* ===================== HERO ===================== */
     #hero {
@@ -2850,17 +2863,27 @@
   /* ---- Hamburger / mobile nav ---- */
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobile-nav');
+
+  function closeMobileNav() {
+    hamburger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
   hamburger.addEventListener('click', () => {
     const open = hamburger.classList.toggle('open');
     mobileNav.classList.toggle('open', open);
-    hamburger.setAttribute('aria-expanded', open);
+    hamburger.setAttribute('aria-expanded', String(open));
   });
+
   document.querySelectorAll('.mobile-link, .mobile-nav .btn').forEach(el => {
-    el.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      mobileNav.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', false);
-    });
+    el.addEventListener('click', closeMobileNav);
+  });
+
+  /* Auto-close mobile nav when viewport crosses back above 768px */
+  const navBreakpoint = window.matchMedia('(max-width: 768px)');
+  navBreakpoint.addEventListener('change', e => {
+    if (!e.matches) closeMobileNav();
   });
 
   /* ---- Enrollment Modal ---- */
