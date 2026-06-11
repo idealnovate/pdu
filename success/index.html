@@ -1,0 +1,928 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PDU Africa â€” Your enrollment has been confirmed. Welcome to the UI/UX Design Scholarship Bootcamp." />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Enrollment Confirmed | PDU Africa</title>
+
+  <link rel="icon" type="image/jpeg" href="../Pictures/SiteIcon.jpg" />
+  <link rel="apple-touch-icon" href="../Pictures/SiteIcon.jpg" />
+
+  <!-- DNS prefetch -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="https://unpkg.com" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/solid.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css" />
+
+  <style>
+    /* ===================== CSS VARIABLES ===================== */
+    :root {
+      --primary:       #068276;
+      --primary-dark:  #022c28;
+      --primary-mid:   #045c53;
+      --primary-light: #0a9e90;
+      --accent:        #f4a85e;
+      --accent-dark:   #e08930;
+      --bg-base:       #f0fdf9;
+      --bg-dark:       #022c28;
+      --text-dark:     #0a0a0a;
+      --text-mid:      #3a3a3a;
+      --text-muted:    #6b7280;
+      --border:        #d1faf4;
+      --shadow-sm:     0 2px 12px rgba(6,130,118,0.08);
+      --shadow-md:     0 8px 32px rgba(6,130,118,0.13);
+      --shadow-lg:     0 20px 60px rgba(6,130,118,0.15);
+      --radius-sm:     8px;
+      --radius-md:     16px;
+      --radius-lg:     24px;
+      --radius-xl:     40px;
+      --transition:    0.3s cubic-bezier(0.4,0,0.2,1);
+      --font-heading:  'Montserrat', sans-serif;
+      --font-body:     'Jost', sans-serif;
+      --max-width:     1200px;
+    }
+
+    /* ===================== RESET & BASE ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; overflow-x: clip; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--bg-base);
+      line-height: 1.7;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: var(--primary); transition: color var(--transition); }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section { padding: 80px 0; overflow-x: clip; }
+    .text-center { text-align: center; }
+
+    /* ===================== BUTTONS ===================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: 100px;
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      border: none;
+      transition: all var(--transition);
+      text-decoration: none;
+      text-align: center;
+    }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .btn-white { background: #fff; color: var(--primary-dark); }
+    .btn-white:hover { background: var(--bg-base); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+    .btn-whatsapp { background: #25D366; color: #fff; }
+    .btn-whatsapp:hover { background: #1da851; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,211,102,0.35); }
+    .btn-lg { padding: 16px 36px; font-size: 1rem; }
+
+    /* ===================== TAGS & DIVIDERS ===================== */
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(6,130,118,0.1);
+      color: var(--primary);
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      border-radius: 100px;
+      margin: 16px 0 20px;
+    }
+    .divider.center { margin: 16px auto 20px; }
+
+    /* ===================== SECTION HEADER ===================== */
+    .section-header { margin-bottom: 48px; }
+    .section-header.center { text-align: center; }
+    .section-header h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--primary-dark);
+      line-height: 1.2;
+      margin: 12px 0 0;
+    }
+    .section-header p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      line-height: 1.7;
+    }
+    .section-header.center p { margin: 0 auto; }
+
+    /* ===================== LOGO BAR ===================== */
+    #logo-bar {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    #logo-bar .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #logo-bar img { height: 34px; width: auto; }
+
+    /* ===================== HERO ===================== */
+    #hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-mid) 50%, var(--primary) 100%);
+      padding: 88px 0 88px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 40%, rgba(10,158,144,0.28) 0%, transparent 55%);
+      pointer-events: none;
+    }
+
+    #confetti-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .success-badge {
+      width: 96px;
+      height: 96px;
+      background: rgba(255,255,255,0.12);
+      border: 2px solid rgba(255,255,255,0.25);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 2.2rem;
+      color: #fff;
+      box-shadow: 0 0 0 10px rgba(255,255,255,0.05);
+      animation: badgePop 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+    }
+    @keyframes badgePop {
+      0%   { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .hero-tag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.92);
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 22px;
+    }
+    .hero-tag-badge i { color: var(--accent); }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.12;
+      margin-bottom: 20px;
+    }
+    .hero-title em { font-style: normal; color: var(--accent); }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.76);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    /* WhatsApp pulse ring on the main CTA */
+    .btn-whatsapp-pulse {
+      position: relative;
+    }
+    .btn-whatsapp-pulse::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 100px;
+      border: 2px solid rgba(37,211,102,0.5);
+      animation: pulse-ring 2s ease-out infinite;
+    }
+    @keyframes pulse-ring {
+      0%   { transform: scale(1); opacity: 0.8; }
+      100% { transform: scale(1.12); opacity: 0; }
+    }
+
+    .hero-cohort-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.78);
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 100px;
+      max-width: 90%;
+      text-align: center;
+    }
+    .hero-cohort-chip i { color: var(--accent); }
+
+    /* ===================== WHAT'S NEXT ===================== */
+    #whats-next { background: #fff; }
+
+    .next-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .next-card {
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid transparent;
+    }
+    .next-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    .next-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+
+    .next-card.whatsapp-card {
+      background: #f0fdf4;
+      border-color: #a7f3c6;
+    }
+    .next-card.whatsapp-card::before {
+      background: linear-gradient(90deg, #25D366, #1da851);
+    }
+    .next-card.email-card {
+      background: var(--bg-base);
+      border-color: var(--border);
+    }
+    .next-card.email-card::before {
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    }
+
+    .next-card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+    .whatsapp-card .next-card-icon { background: rgba(37,211,102,0.14); color: #1da851; }
+    .email-card   .next-card-icon { background: rgba(6,130,118,0.1);   color: var(--primary); }
+
+    .next-step-label {
+      font-family: var(--font-heading);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .next-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.18rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+    }
+    .next-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+      margin-bottom: 26px;
+    }
+
+    .email-tip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      background: rgba(6,130,118,0.07);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+    }
+    .email-tip i { color: var(--primary); flex-shrink: 0; }
+
+    /* ===================== COMMUNITY BENEFITS ===================== */
+    #community-benefits { background: var(--bg-base); }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .benefit-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      transition: all var(--transition);
+    }
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary);
+    }
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(6,130,118,0.1);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+    .benefit-card h3 {
+      font-family: var(--font-heading);
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+    .benefit-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* 6th card â€” teal CTA card */
+    .benefit-card.benefit-cta {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-mid) 100%);
+      border-color: var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .benefit-card.benefit-cta .benefit-icon {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+    .benefit-card.benefit-cta h3 { color: #fff; }
+    .benefit-card.benefit-cta p  { color: rgba(255,255,255,0.78); margin-bottom: 20px; }
+
+    /* ===================== FINAL CTA ===================== */
+    #final-cta {
+      background: var(--bg-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    #final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 25% 60%, rgba(6,130,118,0.22) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-box {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-xl);
+      padding: 64px 48px;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-box .tag { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); }
+    .cta-box h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.18;
+      margin-bottom: 16px;
+    }
+    .cta-box h2 em { font-style: normal; color: var(--accent); }
+    .cta-box p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-reminder {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.42);
+    }
+    .cta-reminder i { color: #25D366; }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--bg-dark);
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    footer .container { padding: 56px 24px 28px; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand img { height: 36px; width: auto; margin-bottom: 16px; }
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.5);
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a {
+      width: 36px; height: 36px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.85rem;
+      transition: all var(--transition);
+    }
+    .footer-social a:hover { background: var(--primary); color: #fff; transform: translateY(-2px); }
+
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul li a { color: rgba(255,255,255,0.5); font-size: 0.88rem; transition: color var(--transition); }
+    .footer-col ul li a:hover { color: #fff; }
+
+    .footer-contact-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin-bottom: 12px; font-size: 0.88rem; color: rgba(255,255,255,0.5);
+    }
+    .footer-contact-item i { color: var(--primary-light); margin-top: 3px; font-size: 0.85rem; flex-shrink: 0; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.32);
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { color: rgba(255,255,255,0.32); transition: color var(--transition); }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    }
+    @media (max-width: 768px) {
+      .section { padding: 60px 0; }
+      .next-grid { grid-template-columns: 1fr; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .cta-box { padding: 48px 28px; }
+    }
+    @media (max-width: 480px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+      .hero-cta-group { flex-direction: column; }
+      .btn-lg { width: 100%; justify-content: center; }
+      .next-card { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===================== LOGO BAR ===================== -->
+<header id="logo-bar">
+  <div class="container">
+    <a href="index.html" aria-label="PDU Africa â€” Back to main site">
+      <img src="../Pictures/PDU Logo Dark (1).png" alt="PDU Africa" />
+    </a>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section id="hero">
+  <canvas id="confetti-canvas"></canvas>
+  <div class="container">
+    <div class="hero-inner">
+
+      <div class="success-badge">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <div class="hero-tag-badge" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-circle-check"></i> Registration Confirmed
+      </div>
+
+      <h1 class="hero-title" data-aos="fade-up" data-aos-delay="160">
+        Welcome Aboard,<br>Future <em>UI/UX Designer.</em>
+      </h1>
+
+      <p class="hero-sub" data-aos="fade-up" data-aos-delay="220">
+        Your registration has been received. You are now part of a growing community of African designers building real careers â€” and we're excited to see you thrive.
+      </p>
+
+      <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="280">
+        <a
+          href="https://chat.whatsapp.com/HsS2HiuXHfY2CAjIPSyOrk?s=cl&p=i&ilr=2"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-whatsapp btn-lg btn-whatsapp-pulse"
+        >
+          <i class="fa-brands fa-whatsapp"></i> Join the WhatsApp Community
+        </a>
+      </div>
+
+      <div class="hero-cohort-chip" data-aos="fade-up" data-aos-delay="340">
+        <i class="fa-solid fa-calendar-days"></i>
+        June 20th 2026 Cohort â€” You're Officially Enrolled
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHAT'S NEXT ===================== -->
+<section id="whats-next" class="section">
+  <div class="container">
+    <div class="section-header center" data-aos="fade-up">
+      <div class="tag"><i class="fa-solid fa-bullhorn"></i> What's Next</div>
+      <h2>Two Important Steps<br>to Take Right Now</h2>
+      <div class="divider center"></div>
+      <p>Complete these two steps immediately to ensure you don't miss a single announcement, session link, or resource from the bootcamp.</p>
+    </div>
+
+    <div class="next-grid">
+
+      <div class="next-card whatsapp-card" data-aos="fade-right" data-aos-delay="60">
+        <div class="next-card-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="next-step-label">Step 1 â€” Most Important</div>
+        <h3>Join Our WhatsApp Community</h3>
+        <p>This is where everything happens. All bootcamp announcements, live class links, training schedules, mentor interactions, and exclusive learning resources will be shared here first â€” and only here.</p>
+        <a
+          href="https://chat.whatsapp.com/HsS2HiuXHfY2CAjIPSyOrk?s=cl&p=i&ilr=2"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-whatsapp"
+        >
+          <i class="fa-brands fa-whatsapp"></i> Join WhatsApp Community &rarr;
+        </a>
+      </div>
+
+      <div class="next-card email-card" data-aos="fade-left" data-aos-delay="120">
+        <div class="next-card-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+        <div class="next-step-label">Step 2 â€” Check Your Inbox</div>
+        <h3>Look Out for Your Email</h3>
+        <p>A confirmation email with your full enrollment details, how to prepare for Day 1, and everything you need to know before the bootcamp begins has been sent to the email address you provided.</p>
+        <div class="email-tip">
+          <i class="fa-solid fa-circle-info"></i>
+          Don't see it? Check your spam or promotions folder.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMMUNITY BENEFITS ===================== -->
+<section id="community-benefits" class="section">
+  <div class="container">
+    <div class="section-header center" data-aos="fade-up">
+      <div class="tag"><i class="fa-brands fa-whatsapp"></i> Community Benefits</div>
+      <h2>Why the WhatsApp Community<br>Is Non-Negotiable</h2>
+      <div class="divider center"></div>
+      <p>Joining the WhatsApp community is not just a suggestion â€” it is where your entire bootcamp experience lives and grows.</p>
+    </div>
+
+    <div class="benefits-grid">
+
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="benefit-icon"><i class="fa-solid fa-bell"></i></div>
+        <h3>Bootcamp Updates & Announcements</h3>
+        <p>Be the first to receive critical announcements about cohort schedules, session timing changes, and important bootcamp news â€” all in real time.</p>
+      </div>
+
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="70">
+        <div class="benefit-icon"><i class="fa-solid fa-video"></i></div>
+        <h3>Training Links & Session Access</h3>
+        <p>Every live class link is shared exclusively inside the WhatsApp community before each session begins. If you're not in the group, you won't get the link.</p>
+      </div>
+
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="140">
+        <div class="benefit-icon"><i class="fa-solid fa-book-open"></i></div>
+        <h3>Learning Materials & Resources</h3>
+        <p>Get exclusive access to design templates, Figma practice files, reading resources, and assignment briefs shared directly inside the community.</p>
+      </div>
+
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="210">
+        <div class="benefit-icon"><i class="fa-solid fa-users"></i></div>
+        <h3>Networking with Fellow Designers</h3>
+        <p>Connect and collaborate with thousands of aspiring designers from across Africa who are on the exact same journey â€” building something great together.</p>
+      </div>
+
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="280">
+        <div class="benefit-icon"><i class="fa-solid fa-user-tie"></i></div>
+        <h3>Guidance from Mentors & Experts</h3>
+        <p>Ask questions, share your work, get real-time feedback, and receive career guidance from experienced designers and industry professionals inside the group.</p>
+      </div>
+
+      <div class="benefit-card benefit-cta" data-aos="fade-up" data-aos-delay="350">
+        <div class="benefit-icon"><i class="fa-brands fa-whatsapp"></i></div>
+        <h3>You're One Tap Away</h3>
+        <p>Hundreds of your fellow cohort members are already inside waiting for you. Tap below to join now.</p>
+        <a
+          href="https://chat.whatsapp.com/HsS2HiuXHfY2CAjIPSyOrk?s=cl&p=i&ilr=2"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-white"
+        >
+          <i class="fa-brands fa-whatsapp"></i> Join Now &rarr;
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section id="final-cta" class="section">
+  <div class="container">
+    <div class="cta-box" data-aos="zoom-in" data-aos-duration="600">
+      <div class="tag">Your Journey Begins</div>
+      <h2>Learn. Grow.<br><em>Create.</em></h2>
+      <p>
+        You've taken the first and most important step. Now join the WhatsApp community, check your email, and get ready to build real-world design skills in just 2 weeks. We'll see you inside.
+      </p>
+      <a
+        href="https://chat.whatsapp.com/HsS2HiuXHfY2CAjIPSyOrk?s=cl&p=i&ilr=2"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-whatsapp btn-lg"
+      >
+        <i class="fa-brands fa-whatsapp"></i> Join Our WhatsApp Community
+      </a>
+      <div class="cta-reminder">
+        <i class="fa-brands fa-whatsapp"></i>
+        Session links are shared only inside the community â€” don't miss out
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <img src="../Pictures/PDU Logo White (1).png" alt="PDU Africa" />
+        <p>Empowering African talent with globally relevant digital skills. PDU Africa is one of Africa's fastest-growing UI/UX design bootcamps â€” building the next generation of world-class designers.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/pduafrica" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://twitter.com/pduafrica" target="_blank" rel="noopener" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://linkedin.com/company/pduafrica" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://facebook.com/pduafrica" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.youtube.com/@Idealnovate" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Programme Links -->
+      <div class="footer-col">
+        <h4>Programme</h4>
+        <ul>
+          <li><a href="index.html#benefits">Why PDU Africa</a></li>
+          <li><a href="index.html#curriculum">Curriculum</a></li>
+          <li><a href="index.html#who-for">Who Is It For</a></li>
+          <li><a href="index.html#certification">Certification</a></li>
+          <li><a href="index.html#kickstart">Enroll Now</a></li>
+          <li><a href="index.html#community">Community</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span><a href="mailto:hello@pduafrica.com" style="color:rgba(255,255,255,0.6);">hello@pduafrica.com</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>
+            <a href="https://wa.me/2349065436488" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6);">+234 906 543 6488</a><br>
+            <a href="https://wa.me/2348079680209" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6);">+234 807 968 0209</a>
+          </span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>73 Hammed Omidiran Way,<br>Kolabalogun Cres, Osogbo,<br>Osun State, Nigeria</span>
+        </div>
+        <div class="footer-contact-item" style="margin-top:16px;">
+          <i class="fa-solid fa-clock"></i>
+          <span>Monâ€“Fri: 9:00am â€“ 5:00pm WAT</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>Â© 2026 PDU Africa by Idealnovate. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://docs.google.com/document/d/1DTeK6jd3qIhzwu2U4A5QwOYh5odjMnNj3Ywp3hy7EV8/edit?usp=sharing" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://docs.google.com/document/d/1DTeK6jd3qIhzwu2U4A5QwOYh5odjMnNj3Ywp3hy7EV8/edit?usp=sharing" target="_blank" rel="noopener">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, offset: 60, duration: 700, easing: 'ease-out-cubic' });
+
+  /* ===================== CONFETTI ===================== */
+  (function () {
+    const canvas  = document.getElementById('confetti-canvas');
+    const ctx     = canvas.getContext('2d');
+    const hero    = document.getElementById('hero');
+
+    function resize() {
+      canvas.width  = hero.offsetWidth;
+      canvas.height = hero.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const COLORS = ['#f4a85e', '#ffffff', '#68d8ce', '#e08930', '#f0fdf9', '#0a9e90', '#fcd34d'];
+    const COUNT  = 130;
+    const pieces = [];
+
+    for (let i = 0; i < COUNT; i++) {
+      pieces.push({
+        x:  Math.random() * canvas.width,
+        y:  Math.random() * canvas.height - canvas.height,
+        w:  Math.random() * 9 + 4,
+        h:  Math.random() * 4 + 2,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        rot: Math.random() * Math.PI * 2,
+        vx: (Math.random() - 0.5) * 1.6,
+        vy: Math.random() * 2.2 + 0.8,
+        vr: (Math.random() - 0.5) * 0.08,
+        alpha: Math.random() * 0.5 + 0.5
+      });
+    }
+
+    const START = Date.now();
+    const TOTAL = 5200; /* ms before fade-out completes */
+
+    function tick() {
+      const elapsed = Date.now() - START;
+      if (elapsed > TOTAL) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        return;
+      }
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      /* global fade-out starts at 3s */
+      const globalAlpha = elapsed < 3000 ? 1 : Math.max(0, 1 - (elapsed - 3000) / 2200);
+
+      pieces.forEach(p => {
+        ctx.save();
+        ctx.globalAlpha = p.alpha * globalAlpha;
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+
+        p.x   += p.vx;
+        p.y   += p.vy;
+        p.rot += p.vr;
+
+        if (p.y > canvas.height + 10) {
+          p.y  = -10;
+          p.x  = Math.random() * canvas.width;
+        }
+      });
+
+      requestAnimationFrame(tick);
+    }
+
+    tick();
+  })();
+</script>
+
+</body>
+</html>
