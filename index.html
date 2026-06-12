@@ -1649,6 +1649,54 @@
       color: #fff;
     }
 
+    /* ===================== INFO STRIP ===================== */
+    #info-strip {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+    }
+    .info-strip-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .info-strip-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 0 40px;
+      flex: 1;
+      justify-content: center;
+    }
+    .info-strip-item i {
+      font-size: 1.3rem;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+    .info-strip-item strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      line-height: 1.3;
+    }
+    .info-strip-item span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .info-strip-divider {
+      width: 1px;
+      height: 44px;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+    @media (max-width: 680px) {
+      .info-strip-grid { flex-direction: column; gap: 16px; }
+      .info-strip-item { padding: 0; justify-content: flex-start; width: 100%; }
+      .info-strip-divider { width: 100%; height: 1px; }
+    }
+
     /* ===================== COUNTDOWN BANNER ===================== */
     #countdown-banner {
       background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
@@ -1868,48 +1916,13 @@
           Become a <em>Recognized</em><br>UI/UX Designer
         </h1>
         <p class="hero-sub">
-          Learn practical UI/UX design for <strong>FREE</strong> with zero tech experience.
-          Get mentored by industry experts, build a global portfolio, and land your dream remote role.
+          Learn practical UI/UX design for <strong>FREE</strong> — zero tech experience needed.
+          Earn a globally recognised certificate and unlock opportunities worldwide.
         </p>
-
-        <div class="hero-features">
-          <div class="hero-feat">
-            <div class="hero-feat-icon"><i class="fa-solid fa-certificate"></i></div>
-            <div class="hero-feat-text">
-              <strong>Certification</strong>
-              <span>Earn Global Certificate</span>
-            </div>
-          </div>
-          <div class="hero-feat">
-            <div class="hero-feat-icon"><i class="fa-solid fa-video"></i></div>
-            <div class="hero-feat-text">
-              <strong>Learning Mode</strong>
-              <span>Live Online Sessions</span>
-            </div>
-          </div>
-          <div class="hero-feat">
-            <div class="hero-feat-icon"><i class="fa-solid fa-briefcase"></i></div>
-            <div class="hero-feat-text">
-              <strong>Job Opportunities</strong>
-              <span>Global &amp; Local Tech Roles</span>
-            </div>
-          </div>
-          <div class="hero-feat">
-            <div class="hero-feat-icon"><i class="fa-solid fa-star"></i></div>
-            <div class="hero-feat-text">
-              <strong>Alumni Rating</strong>
-              <span>⭐ 4.8/5</span>
-              <span style="font-size:0.7rem;color:var(--text-muted);font-weight:400;">(Alumni Survey 2026)</span>
-            </div>
-          </div>
-        </div>
 
         <div class="hero-buttons">
           <a href="#kickstart" class="btn btn-primary btn-lg">
             <i class="fa-solid fa-rocket"></i> Enroll Now — It's FREE
-          </a>
-          <a href="https://wa.me/2349065436488" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
-            <i class="fa-brands fa-whatsapp"></i> Talk to Admissions
           </a>
         </div>
 
@@ -1976,6 +1989,45 @@
       <a href="#kickstart" class="countdown-cta">
         Secure Your Spot <i class="fa-solid fa-arrow-right"></i>
       </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== INFO STRIP ===================== -->
+<div id="info-strip">
+  <div class="container">
+    <div class="info-strip-grid">
+      <div class="info-strip-item">
+        <i class="fa-solid fa-certificate"></i>
+        <div>
+          <strong>Earn Global Certificate</strong>
+          <span>Certification</span>
+        </div>
+      </div>
+      <div class="info-strip-divider"></div>
+      <div class="info-strip-item">
+        <i class="fa-solid fa-video"></i>
+        <div>
+          <strong>Live Online Sessions</strong>
+          <span>Learning Mode</span>
+        </div>
+      </div>
+      <div class="info-strip-divider"></div>
+      <div class="info-strip-item">
+        <i class="fa-solid fa-briefcase"></i>
+        <div>
+          <strong>Global &amp; Local Tech Roles</strong>
+          <span>Job Opportunities</span>
+        </div>
+      </div>
+      <div class="info-strip-divider"></div>
+      <div class="info-strip-item">
+        <i class="fa-solid fa-star"></i>
+        <div>
+          <strong>⭐ 4.8/5 Alumni Rating</strong>
+          <span>Alumni Survey 2026</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
