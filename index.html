@@ -35,7 +35,6 @@
   <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
   <link rel="dns-prefetch" href="https://unpkg.com" />
-  <link rel="dns-prefetch" href="https://www.cognitoforms.com" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -346,46 +345,6 @@
       margin-bottom: 36px;
       max-width: 480px;
       line-height: 1.65;
-    }
-    .hero-features {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 36px;
-    }
-    .hero-feat {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 14px 16px;
-      box-shadow: var(--shadow-sm);
-    }
-    .hero-feat-icon {
-      width: 36px; height: 36px;
-      border-radius: var(--radius-sm);
-      background: rgba(6,130,118,0.1);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      color: var(--primary);
-      font-size: 1rem;
-    }
-    .hero-feat-text strong {
-      display: block;
-      font-family: var(--font-heading);
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 2px;
-    }
-    .hero-feat-text span {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-dark);
     }
     .hero-buttons { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 32px; }
     .hero-trust {
@@ -1712,6 +1671,9 @@
     .form-error-banner.show { display: flex; }
     .form-error-banner i { flex-shrink: 0; }
 
+    @media (max-width: 768px) {
+      .form-row { grid-template-columns: 1fr; gap: 16px; }
+    }
     @media (max-width: 600px) {
       .modal-box    { border-radius: var(--radius-lg); max-height: 98vh; }
       .modal-header { padding: 12px 18px 10px; }
@@ -1720,7 +1682,6 @@
       .modal-header h2 { font-size: 1.1rem; margin-bottom: 0; }
       .modal-header p  { display: none; }
       .modal-body   { padding: 16px 18px 24px; }
-      .form-row     { grid-template-columns: 1fr; gap: 16px; }
     }
 
     /* ===================== FLOATING MOBILE CTA ===================== */
@@ -1943,7 +1904,6 @@
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
       .companies-stat-row { gap: 28px; }
-      .hero-features { grid-template-columns: 1fr; }
       .projects-grid { grid-template-columns: 1fr; }
       .testi-card { width: 220px; }
       .testi-proof-bar { gap: 24px; }
@@ -1970,6 +1930,20 @@
       .hero-buttons { flex-direction: column; }
       .btn-lg { width: 100%; justify-content: center; }
     }
+    @media (max-width: 360px) {
+      .section { padding: 52px 0; }
+      #hero { padding: 100px 0 56px; }
+      .hero-buttons { gap: 10px; }
+      .btn-lg { padding: 14px 20px; font-size: 0.9rem; }
+      .cd-unit { min-width: 38px; padding: 4px 6px; }
+      .cd-num  { font-size: 1rem; }
+      .countdown-cta { padding: 8px 12px; font-size: 0.75rem; }
+      .testi-card { width: 200px; }
+    }
+    @media (max-width: 320px) {
+      #float-enroll { bottom: 60px; padding: 11px 18px; font-size: 0.82rem; }
+      #back-top { bottom: 12px; }
+    }
   </style>
 </head>
 <body>
@@ -1978,7 +1952,7 @@
 <nav id="navbar">
   <div class="container">
     <div class="nav-inner">
-      <a href="#" class="nav-logo" aria-label="PDU Africa Home">
+      <a href="#hero" class="nav-logo" aria-label="PDU Africa Home">
         <img src="Pictures/PDU Logo Dark (1).png" alt="PDU Africa" />
       </a>
 
