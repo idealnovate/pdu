@@ -22,7 +22,7 @@
  */
 
 // ── CONFIG ────────────────────────────────────────────────────────────────────
-const SHEET_NAME   = 'PDU Enrollments';
+const SHEET_NAME   = 'PDU Enrollments2';
 const SHEET_ID     = 'YOUR_GOOGLE_SHEET_ID';
 const FROM_NAME    = 'PDU Africa';
 const REPLY_TO     = 'hello@pduafrica.com';
@@ -40,9 +40,9 @@ function doPost(e) {
     if (sheet.getLastRow() === 0) {
       sheet.appendRow([
         'Timestamp', 'First Name', 'Last Name',
-        'Email', 'Phone (WhatsApp)', 'Gender', 'How They Heard', 'Has Computer'
+        'Email', 'Phone (WhatsApp)', 'Location', 'Gender', 'How They Heard', 'Has Computer'
       ]);
-      sheet.getRange(1, 1, 1, 8).setFontWeight('bold').setBackground('#1a3a5c').setFontColor('#ffffff');
+      sheet.getRange(1, 1, 1, 9).setFontWeight('bold').setBackground('#1a3a5c').setFontColor('#ffffff');
     }
 
     // Append applicant row
@@ -52,6 +52,7 @@ function doPost(e) {
       data.lastName,
       data.email,
       data.phone,
+      data.location,
       data.gender,
       data.referral,
       data.hasComputer
