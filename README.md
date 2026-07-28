@@ -41,10 +41,10 @@ python -m http.server 8080
 | Who Is This For | `#who-for` | 5 cards + bridge |
 | Benefits | `#benefits` | 4 feature cards |
 | Tools | `#tools` | Figma, Adobe XD, Notion etc. |
-| Companies | `#companies` | Scrolling marquee — companies that hire designers |
+| Companies | `#student-work` | Scrolling marquee — companies that hire designers |
 | Qualification Requirements | `#qualification` | Checklist + social chips |
 | Curriculum | `#curriculum` | Sticky sidebar + accordion sessions |
-| Student Projects | `#projects` | 6 portfolio project cards |
+| Student Projects | `#student-projects` | 6 portfolio project cards |
 | Testimonials | `#testimonials` | Dual-row opposing marquee, dark background, Tes1–Tes8 |
 | Certification | `#certification` | 4 numbered steps + `WebSample.jpg` |
 | Community | `#community` | WhatsApp + Telegram community section |
@@ -61,14 +61,14 @@ python -m http.server 8080
 | What | Where | Current Value |
 |---|---|---|
 | Apps Script URL | `index.html` — `const SCRIPT_URL` | Set (deployed) |
-| Cohort start date | Hero float card, kickstart section | **June 27th 2026** |
+| Cohort start date | Hero float card, kickstart section | **June 28th 2026** |
 | Countdown key | `index.html` JS — `var KEY` | `'pdu_admission_deadline'` |
 | Countdown duration | `index.html` JS — `var DURATION` | 2 days (rolling) |
 | WhatsApp contact | Multiple CTA buttons | `wa.me/2349065436488` |
 | Hiring enquiries | FAQ section | `hire@pduafrica.com` |
 | Privacy Policy / Terms | Footer links | Shared Google Doc |
 
-**To update the cohort date:** search for `June 27th 2026` and `June 27` across `index.html` and `success/index.html` and replace all instances.
+**To update the cohort date:** search for `June 28th 2026` and `June 28` across `index.html` and `success/index.html` and replace all instances.
 
 ---
 
@@ -130,6 +130,7 @@ The enrollment form posts to a Google Apps Script Web App that writes each appli
 | Last Name | `f-lastname` | Last Name |
 | Email | `f-email` | Email |
 | Phone (WhatsApp) | `f-phone` | Phone (WhatsApp) |
+| Location | `f-location` | Location |
 | Gender | `input[name="gender"]` | Gender |
 | How They Heard | `f-referral` | How They Heard |
 | Has Computer | `input[name="hasComputer"]` | Has Computer |
