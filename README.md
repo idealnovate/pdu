@@ -9,10 +9,13 @@ A single-file static landing page for the **PDU Africa UI/UX Design Scholarship 
 ```
 pdu/
 ├── index.html               # Main landing page (all CSS + JS inline)
+├── google-apps-script.gs    # Apps Script for form → Google Sheets + welcome email
 ├── success/
-│   └── index.html           # Post-enrollment success page
+│   └── index.html           # Post-enrollment success page (has its own footer — see below)
 └── Pictures/                # All image assets (logos, hero, testimonials, etc.)
 ```
+
+> **Note:** `index.html` and `success/index.html` each hardcode their own copy of the site footer (kept as separate, manually-synced copies by design — not a shared include). When editing footer content, links, or contact info, update both files.
 
 ---
 
@@ -35,7 +38,7 @@ python -m http.server 8080
 | Section | ID | Notes |
 |---|---|---|
 | Navbar | `#navbar` | Sticky, hamburger on mobile |
-| Hero | `#hero` | `Idealhero.jpg`, avatar stack, June 27 float card |
+| Hero | `#hero` | `Idealhero.jpg`, avatar stack, August 23rd float card |
 | Countdown Banner | `#countdown-banner` | Live 2-day rolling timer |
 | Info Strip | `#info-strip` | 4 key programme chips |
 | Who Is This For | `#who-for` | 5 cards + bridge |
@@ -60,15 +63,18 @@ python -m http.server 8080
 
 | What | Where | Current Value |
 |---|---|---|
-| Apps Script URL | `index.html` — `const SCRIPT_URL` | Set (deployed) |
-| Cohort start date | Hero float card, kickstart section | **June 28th 2026** |
+| Apps Script URL | `index.html` — `const SCRIPT_URL`, `google-apps-script.gs` header comment | Set (deployed 2026-08-12) |
+| Sheet tab name | `google-apps-script.gs` — `SHEET_NAME` | `'PDU Enrollment 15'` |
+| Cohort start date | Hero float card, modal, `success/index.html`, `google-apps-script.gs` — `COHORT_DATE` | **August 23, 2026** |
 | Countdown key | `index.html` JS — `var KEY` | `'pdu_admission_deadline'` |
-| Countdown duration | `index.html` JS — `var DURATION` | 2 days (rolling) |
-| WhatsApp contact | Multiple CTA buttons | `wa.me/2349065436488` |
+| Countdown duration | `index.html` JS — `var DURATION` | 2 days (rolling — unrelated to the actual cohort date, purely urgency UI) |
+| WhatsApp community | Modal notice, `success/index.html`, `google-apps-script.gs` — `WHATSAPP_URL` | `chat.whatsapp.com/EZ8XKUqGz7T9gVtlG45HzB` |
+| WhatsApp direct contact | Multiple CTA buttons | `wa.me/2349065436488` |
+| Footer / general contact email | Footer (both `index.html` and `success/index.html`) | `help@pduafrica.com` |
 | Hiring enquiries | FAQ section | `hire@pduafrica.com` |
 | Privacy Policy / Terms | Footer links | Shared Google Doc |
 
-**To update the cohort date:** search for `June 28th 2026` and `June 28` across `index.html` and `success/index.html` and replace all instances.
+**To update the cohort date:** grep the whole folder (`index.html`, `success/index.html`, `google-apps-script.gs`) for the old date rather than editing just one file — it's hardcoded in all three, not templated.
 
 ---
 
@@ -85,8 +91,8 @@ The enrollment form posts to a Google Apps Script Web App that writes each appli
 
 2. **Create the Apps Script project**
    - Open [script.google.com](https://script.google.com) → **New project**
-   - Paste your enrollment handler script
-   - Replace `'YOUR_GOOGLE_SHEET_ID'` with your actual Sheet ID
+   - Paste the contents of `google-apps-script.gs`
+   - Replace `'YOUR_GOOGLE_SHEET_ID'` (`SHEET_ID`) with your actual Sheet ID — `SHEET_NAME` (the tab name, currently `'PDU Enrollment 15'`) can stay as-is or be renamed to match your sheet
 
 3. **Deploy as a Web App**
    - Click **Deploy → New deployment**
@@ -116,7 +122,7 @@ The enrollment form posts to a Google Apps Script Web App that writes each appli
 | Action | Detail |
 |---|---|
 | Receives form submission | `doPost(e)` parses JSON body sent with `Content-Type: text/plain` |
-| Writes to Sheet | Appends a row with timestamp + 7 applicant fields; auto-creates a formatted header on first run |
+| Writes to Sheet | Appends a row with timestamp + 8 applicant fields; auto-creates a formatted header on first run |
 | Sends welcome email | Branded HTML email from your Gmail via `GmailApp.sendEmail()` |
 | Redirect | After submit, page always redirects to `success/` regardless of response |
 
