@@ -18,7 +18,7 @@
  *    Deploy → Manage deployments → Edit (pencil) → Version: New version → Deploy
  *
  * CURRENT DEPLOYED URL (already wired into index.html):
- * https://script.google.com/macros/s/AKfycbw-RC0hxIlPexuMNDl_yYnnpAaTArfPayKLDY2ObfHPoRD4fpGL36KzgJvgC3wldsMU/exec
+ * https://script.google.com/macros/s/AKfycbxihcrai6GjEros9LYUFWSJ79Xfszbo2u49xaCHOwDYoiddZZiIa4i0pTAEJt-RqWQx6Q/exec
  */
 
 // ── CONFIG ────────────────────────────────────────────────────────────────────
