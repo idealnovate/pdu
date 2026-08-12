@@ -25,7 +25,7 @@
 const SHEET_NAME   = 'PDU Enrollment 15';
 const SHEET_ID     = 'YOUR_GOOGLE_SHEET_ID';
 const FROM_NAME    = 'PDU Africa';
-const REPLY_TO     = 'hello@pduafrica.com';
+const REPLY_TO     = 'help@pduafrica.com';
 const COHORT_DATE  = 'August 23, 2026';
 const WHATSAPP_URL = 'https://chat.whatsapp.com/EZ8XKUqGz7T9gVtlG45HzB?s=cl&p=i&ilr=2&amv=0';
 // ─────────────────────────────────────────────────────────────────────────────
