@@ -123,8 +123,8 @@ The enrollment form posts to a Google Apps Script Web App that writes each appli
 |---|---|
 | Receives form submission | `doPost(e)` parses JSON body sent with `Content-Type: text/plain` |
 | Writes to Sheet | Appends a row with timestamp + 8 applicant fields; auto-creates a formatted header on first run |
-| Sends welcome email | Branded HTML email from your Gmail via `GmailApp.sendEmail()` |
-| Redirect | After submit, page always redirects to `success/` regardless of response |
+| Sends welcome email | Branded HTML email from your Gmail via `GmailApp.sendEmail()`, wrapped in its own try/catch so a failure here (e.g. Gmail's daily send quota) can't throw and get swallowed by the outer handler — the sheet write above always completes first regardless |
+| Redirect | After submit, page always redirects to `success/` regardless of response (uses `mode:'no-cors'`, so the client can't read success/failure) — a failed welcome email is silent to the applicant either way, but still logged server-side via `Logger.log` for you to check in the Apps Script Executions tab |
 
 ---
 
