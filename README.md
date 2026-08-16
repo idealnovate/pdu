@@ -68,7 +68,7 @@ python -m http.server 8080
 | Cohort start date | Hero float card, modal, `success/index.html`, `google-apps-script.gs` — `COHORT_DATE` | **August 23, 2026** |
 | Countdown key | `index.html` JS — `var KEY` | `'pdu_admission_deadline'` |
 | Countdown duration | `index.html` JS — `var DURATION` | 2 days (rolling — unrelated to the actual cohort date, purely urgency UI) |
-| WhatsApp community | Modal notice, `success/index.html`, `google-apps-script.gs` — `WHATSAPP_URL` | `chat.whatsapp.com/LF3HLgiBxMH18Fr7qopVsj` |
+| WhatsApp community | Modal notice, `success/index.html`, `google-apps-script.gs` — `WHATSAPP_URL` | `chat.whatsapp.com/GIydXGfiKTY5Pv8jUbp0AB` |
 | WhatsApp direct contact | Multiple CTA buttons | `wa.me/2349065436488` |
 | Footer / general contact email | Footer (both `index.html` and `success/index.html`) | `help@pduafrica.com` |
 | Hiring enquiries | FAQ section | `hire@pduafrica.com` |

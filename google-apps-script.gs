@@ -27,7 +27,7 @@ const SHEET_ID     = 'YOUR_GOOGLE_SHEET_ID';
 const FROM_NAME    = 'PDU Africa';
 const REPLY_TO     = 'help@pduafrica.com';
 const COHORT_DATE  = 'August 23, 2026';
-const WHATSAPP_URL = 'https://chat.whatsapp.com/LF3HLgiBxMH18Fr7qopVsj?s=cl&p=i&ilr=2&amv=0';
+const WHATSAPP_URL = 'https://chat.whatsapp.com/GIydXGfiKTY5Pv8jUbp0AB?s=cl&p=i&mlu=4&amv=0';
 // ─────────────────────────────────────────────────────────────────────────────
 
 function doPost(e) {
