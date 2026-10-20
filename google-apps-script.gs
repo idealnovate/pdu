@@ -18,15 +18,15 @@
  *    Deploy → Manage deployments → Edit (pencil) → Version: New version → Deploy
  *
  * CURRENT DEPLOYED URL (already wired into index.html):
- * https://script.google.com/macros/s/AKfycbxihcrai6GjEros9LYUFWSJ79Xfszbo2u49xaCHOwDYoiddZZiIa4i0pTAEJt-RqWQx6Q/exec
+ * https://script.google.com/macros/s/AKfycbyDxLOiWb15DlCz3nvW5lCDKgI_igBDpShjojSud7HH-OuvJsa4bpQAA7eYXWKc8NiC/exec
  */
 
 // ── CONFIG ────────────────────────────────────────────────────────────────────
-const SHEET_NAME   = 'PDU Enrollment 15';
-const SHEET_ID     = 'YOUR_GOOGLE_SHEET_ID';
+const SHEET_NAME   = 'PDU Enrollment 16';
+const SHEET_ID     = '15Dz61HojmjryXx5K0ahBPsLqVTqkHyAO0RqM9WyRc2g';
 const FROM_NAME    = 'PDU Africa';
 const REPLY_TO     = 'help@pduafrica.com';
-const COHORT_DATE  = 'August 23, 2026';
+const COHORT_DATE  = 'October 31, 2026';
 const WHATSAPP_URL = 'https://chat.whatsapp.com/HPPMpSKm3j45yn2C02pFwU?s=cl&p=i&mlu=4';
 // ─────────────────────────────────────────────────────────────────────────────
 

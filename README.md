@@ -38,7 +38,7 @@ python -m http.server 8080
 | Section | ID | Notes |
 |---|---|---|
 | Navbar | `#navbar` | Sticky, hamburger on mobile |
-| Hero | `#hero` | `Idealhero.jpg`, avatar stack, August 23rd float card |
+| Hero | `#hero` | `Idealhero.jpg`, avatar stack, October 31st float card |
 | Countdown Banner | `#countdown-banner` | Live 2-day rolling timer |
 | Info Strip | `#info-strip` | 4 key programme chips |
 | Who Is This For | `#who-for` | 5 cards + bridge |
@@ -63,9 +63,10 @@ python -m http.server 8080
 
 | What | Where | Current Value |
 |---|---|---|
-| Apps Script URL | `index.html` — `const SCRIPT_URL`, `google-apps-script.gs` header comment | Set (deployed 2026-08-12) |
-| Sheet tab name | `google-apps-script.gs` — `SHEET_NAME` | `'PDU Enrollment 15'` |
-| Cohort start date | Hero float card, modal, `success/index.html`, `google-apps-script.gs` — `COHORT_DATE` | **August 23, 2026** |
+| Apps Script URL | `index.html` — `const SCRIPT_URL`, `google-apps-script.gs` header comment | Set (redeployed 2026-10-20 — `…/AKfycbyDxLOi…c8NiC/exec`) |
+| Sheet tab name | `google-apps-script.gs` — `SHEET_NAME` | `'PDU Enrollment 16'` |
+| Sheet ID | `google-apps-script.gs` — `SHEET_ID` | `15Dz61HojmjryXx5K0ahBPsLqVTqkHyAO0RqM9WyRc2g` (set 2026-10-20) |
+| Cohort start date | Hero float card, modal, `success/index.html`, `google-apps-script.gs` — `COHORT_DATE` | **October 31, 2026** |
 | Countdown key | `index.html` JS — `var KEY` | `'pdu_admission_deadline'` |
 | Countdown duration | `index.html` JS — `var DURATION` | 2 days (rolling — unrelated to the actual cohort date, purely urgency UI) |
 | WhatsApp community | Modal notice, `success/index.html`, `google-apps-script.gs` — `WHATSAPP_URL` | `chat.whatsapp.com/HPPMpSKm3j45yn2C02pFwU` |
@@ -92,7 +93,7 @@ The enrollment form posts to a Google Apps Script Web App that writes each appli
 2. **Create the Apps Script project**
    - Open [script.google.com](https://script.google.com) → **New project**
    - Paste the contents of `google-apps-script.gs`
-   - Replace `'YOUR_GOOGLE_SHEET_ID'` (`SHEET_ID`) with your actual Sheet ID — `SHEET_NAME` (the tab name, currently `'PDU Enrollment 15'`) can stay as-is or be renamed to match your sheet
+   - Replace `'YOUR_GOOGLE_SHEET_ID'` (`SHEET_ID`) with your actual Sheet ID — `SHEET_NAME` (the tab name, currently `'PDU Enrollment 16'`) can stay as-is or be renamed to match your sheet
 
 3. **Deploy as a Web App**
    - Click **Deploy → New deployment**
