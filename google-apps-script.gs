@@ -27,7 +27,7 @@ const SHEET_ID     = '15Dz61HojmjryXx5K0ahBPsLqVTqkHyAO0RqM9WyRc2g';
 const FROM_NAME    = 'PDU Africa';
 const REPLY_TO     = 'help@pduafrica.com';
 const COHORT_DATE  = 'October 31, 2026';
-const WHATSAPP_URL = 'https://chat.whatsapp.com/DGk39LuYniS9giio5LBgWy?s=cl&p=i&mlu=4&ilr=4';
+const WHATSAPP_URL = 'https://chat.whatsapp.com/CPYMXJVxV0E2QInKqGUBxh?s=cl&p=i&mlu=4&ilr=4';
 // ─────────────────────────────────────────────────────────────────────────────
 
 function doPost(e) {
